@@ -11,7 +11,7 @@ serving_workspace_name, serving_name, port, model = 'expo-recall', 'demo-0-0-1',
 
 try:
     print(f'Trying to read serving {serving_workspace_name}/{serving_name}...')
-    a, b, c = serving_api.serving_tf_proxy_model_with_http_info(model, {
+    resp = serving_api.serving_tf_proxy_model(model, {
         'raw_input': True,
         'options': {
             'noCache': True
@@ -23,7 +23,6 @@ try:
             },
         }
     }, serving_workspace_name, serving_name, port)
-    print(a)
-    # print(f'Serving successfully read')
+    print('Response: ', resp)
 except ApiException as e:
     print('Error when reading serving: %s\n' % e)

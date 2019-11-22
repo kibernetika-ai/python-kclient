@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serving_tf_proxy_model**
-> Map5Bstring5Dinterface207B7D serving_tf_proxy_model(model, body, workspace, serving, port)
+> str serving_tf_proxy_model(model, body, workspace, serving, port)
 
 TF proxy to serving (model)
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Map5Bstring5Dinterface207B7D**](Map5Bstring5Dinterface207B7D.md)
+**str**
 
 ### Authorization
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serving_tf_proxy_model_signature**
-> Map5Bstring5Dinterface207B7D serving_tf_proxy_model_signature(model, signature, body, workspace, serving, port)
+> str serving_tf_proxy_model_signature(model, signature, body, workspace, serving, port)
 
 TF proxy to serving (model, signature)
 
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Map5Bstring5Dinterface207B7D**](Map5Bstring5Dinterface207B7D.md)
+**str**
 
 ### Authorization
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serving_tf_proxy_model_signature_version**
-> Map5Bstring5Dinterface207B7D serving_tf_proxy_model_signature_version(model, signature, version, body, workspace, serving, port)
+> str serving_tf_proxy_model_signature_version(model, signature, version, body, workspace, serving, port)
 
 TF proxy to serving (model, signature, version)
 
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Map5Bstring5Dinterface207B7D**](Map5Bstring5Dinterface207B7D.md)
+**str**
 
 ### Authorization
 
