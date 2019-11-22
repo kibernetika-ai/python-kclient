@@ -1,12 +1,12 @@
 from examples import config
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models import inference_run_serving_request
+import kclient
+from kclient.rest import ApiException
+from kclient.models import inference_run_serving_request
 
 
-client = swagger_client.ApiClient(config.get())
+client = kclient.ApiClient(config.get())
 
-inference_api = swagger_client.api.inference_api.InferenceApi(client)
+inference_api = kclient.api.inference_api.InferenceApi(client)
 
 workspace_name, catalog_inference_name, version = 'kuberlab-demo', 'demo', '0.0.1'
 serving_workspace_name, serving_name = 'expo-recall', 'demo-0-0-1'

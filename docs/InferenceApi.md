@@ -1,4 +1,4 @@
-# swagger_client.InferenceApi
+# kclient.InferenceApi
 
 All URIs are relative to *https://dev.kibernetika.io*
 
@@ -19,18 +19,18 @@ Delete inference's version
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import kclient
+from kclient.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = kclient.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.InferenceApi(swagger_client.ApiClient(configuration))
+api_instance = kclient.InferenceApi(kclient.ApiClient(configuration))
 workspace = 'workspace_example' # str | Workspace's name
 inference = 'inference_example' # str | Item's name (Inference)
 version = 'version_example' # str | Inference's version
@@ -74,18 +74,18 @@ Return inference's info for specified version
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import kclient
+from kclient.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = kclient.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.InferenceApi(swagger_client.ApiClient(configuration))
+api_instance = kclient.InferenceApi(kclient.ApiClient(configuration))
 workspace = 'workspace_example' # str | Workspace's name
 inference = 'inference_example' # str | Item's name (Inference)
 version = 'version_example' # str | Inference's version
@@ -130,19 +130,19 @@ Starts serving
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import kclient
+from kclient.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = kclient.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.InferenceApi(swagger_client.ApiClient(configuration))
-body = swagger_client.InferenceRunServingRequest() # InferenceRunServingRequest | 
+api_instance = kclient.InferenceApi(kclient.ApiClient(configuration))
+body = kclient.InferenceRunServingRequest() # InferenceRunServingRequest | 
 workspace = 'workspace_example' # str | Workspace's name
 inference = 'inference_example' # str | Item's name (Inference)
 version = 'version_example' # str | Inference's version
@@ -188,19 +188,19 @@ Update inference's info for specified version
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import kclient
+from kclient.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = kclient.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.InferenceApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ModelsInferenceVersion() # ModelsInferenceVersion | 
+api_instance = kclient.InferenceApi(kclient.ApiClient(configuration))
+body = kclient.ModelsInferenceVersion() # ModelsInferenceVersion | 
 workspace = 'workspace_example' # str | Workspace's name
 inference = 'inference_example' # str | Item's name (Inference)
 version = 'version_example' # str | Inference's version

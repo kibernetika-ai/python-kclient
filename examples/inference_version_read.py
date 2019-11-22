@@ -1,11 +1,11 @@
 from examples import config
-import swagger_client
-from swagger_client.rest import ApiException
+import kclient
+from kclient.rest import ApiException
 
 
-client = swagger_client.ApiClient(config.get())
+client = kclient.ApiClient(config.get())
 
-inference_api = swagger_client.api.inference_api.InferenceApi(client)
+inference_api = kclient.api.inference_api.InferenceApi(client)
 
 workspace_name, catalog_inference_name, version = 'kuberlab-demo', 'demo', '0.0.1'
 try:

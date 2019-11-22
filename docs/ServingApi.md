@@ -1,4 +1,4 @@
-# swagger_client.ServingApi
+# kclient.ServingApi
 
 All URIs are relative to *https://dev.kibernetika.io*
 
@@ -23,18 +23,18 @@ Delete serving
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import kclient
+from kclient.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = kclient.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ServingApi(swagger_client.ApiClient(configuration))
+api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
 workspace = 'workspace_example' # str | Workspace's name
 serving = 'serving_example' # str | Serving's Name or ID
 dependencies = true # bool | Get only dependencies (optional)
@@ -82,18 +82,18 @@ Disable serving
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import kclient
+from kclient.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = kclient.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ServingApi(swagger_client.ApiClient(configuration))
+api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
 workspace = 'workspace_example' # str | Workspace's name
 serving = 'serving_example' # str | Serving's Name or ID
 
@@ -136,18 +136,18 @@ Enable serving
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import kclient
+from kclient.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = kclient.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ServingApi(swagger_client.ApiClient(configuration))
+api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
 workspace = 'workspace_example' # str | Workspace's name
 serving = 'serving_example' # str | Serving's Name or ID
 
@@ -190,18 +190,18 @@ Return serving's info
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import kclient
+from kclient.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = kclient.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ServingApi(swagger_client.ApiClient(configuration))
+api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
 workspace = 'workspace_example' # str | Workspace's name
 serving = 'serving_example' # str | Serving's Name or ID
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serving_tf_proxy_model**
-> serving_tf_proxy_model(model, body, workspace, serving, port)
+> Map5Bstring5Dinterface207B7D serving_tf_proxy_model(model, body, workspace, serving, port)
 
 TF proxy to serving (model)
 
@@ -244,18 +244,18 @@ TF proxy to serving (model)
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import kclient
+from kclient.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = kclient.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ServingApi(swagger_client.ApiClient(configuration))
+api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
 model = 'model_example' # str | Serving model
 body = 'body_example' # str | 
 workspace = 'workspace_example' # str | Workspace's name
@@ -264,7 +264,8 @@ port = 'port_example' # str | Serving port
 
 try:
     # TF proxy to serving (model)
-    api_instance.serving_tf_proxy_model(model, body, workspace, serving, port)
+    api_response = api_instance.serving_tf_proxy_model(model, body, workspace, serving, port)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServingApi->serving_tf_proxy_model: %s\n" % e)
 ```
@@ -281,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Map5Bstring5Dinterface207B7D**](Map5Bstring5Dinterface207B7D.md)
 
 ### Authorization
 
@@ -295,7 +296,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serving_tf_proxy_model_signature**
-> serving_tf_proxy_model_signature(model, signature, body, workspace, serving, port)
+> Map5Bstring5Dinterface207B7D serving_tf_proxy_model_signature(model, signature, body, workspace, serving, port)
 
 TF proxy to serving (model, signature)
 
@@ -303,18 +304,18 @@ TF proxy to serving (model, signature)
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import kclient
+from kclient.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = kclient.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ServingApi(swagger_client.ApiClient(configuration))
+api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
 model = 'model_example' # str | Serving model
 signature = 'signature_example' # str | Serving signature
 body = 'body_example' # str | 
@@ -324,7 +325,8 @@ port = 'port_example' # str | Serving port
 
 try:
     # TF proxy to serving (model, signature)
-    api_instance.serving_tf_proxy_model_signature(model, signature, body, workspace, serving, port)
+    api_response = api_instance.serving_tf_proxy_model_signature(model, signature, body, workspace, serving, port)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServingApi->serving_tf_proxy_model_signature: %s\n" % e)
 ```
@@ -342,7 +344,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Map5Bstring5Dinterface207B7D**](Map5Bstring5Dinterface207B7D.md)
 
 ### Authorization
 
@@ -356,7 +358,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serving_tf_proxy_model_signature_version**
-> serving_tf_proxy_model_signature_version(model, signature, version, body, workspace, serving, port)
+> Map5Bstring5Dinterface207B7D serving_tf_proxy_model_signature_version(model, signature, version, body, workspace, serving, port)
 
 TF proxy to serving (model, signature, version)
 
@@ -364,18 +366,18 @@ TF proxy to serving (model, signature, version)
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import kclient
+from kclient.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = kclient.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ServingApi(swagger_client.ApiClient(configuration))
+api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
 model = 'model_example' # str | Serving model
 signature = 'signature_example' # str | Serving signature
 version = 'version_example' # str | Serving version
@@ -386,7 +388,8 @@ port = 'port_example' # str | Serving port
 
 try:
     # TF proxy to serving (model, signature, version)
-    api_instance.serving_tf_proxy_model_signature_version(model, signature, version, body, workspace, serving, port)
+    api_response = api_instance.serving_tf_proxy_model_signature_version(model, signature, version, body, workspace, serving, port)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServingApi->serving_tf_proxy_model_signature_version: %s\n" % e)
 ```
@@ -405,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Map5Bstring5Dinterface207B7D**](Map5Bstring5Dinterface207B7D.md)
 
 ### Authorization
 
@@ -427,19 +430,19 @@ Update serving
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import kclient
+from kclient.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Bearer
-configuration = swagger_client.Configuration()
+configuration = kclient.Configuration()
 configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['Authorization'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.ServingApi(swagger_client.ApiClient(configuration))
-body = swagger_client.MlappServing() # MlappServing | 
+api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
+body = kclient.MlappServing() # MlappServing | 
 workspace = 'workspace_example' # str | Workspace's name
 serving = 'serving_example' # str | Serving's Name or ID
 

@@ -1,11 +1,11 @@
 from examples import config
-import swagger_client
-from swagger_client.rest import ApiException
+import kclient
+from kclient.rest import ApiException
 
 
-client = swagger_client.ApiClient(config.get())
+client = kclient.ApiClient(config.get())
 
-serving_api = swagger_client.api.serving_api.ServingApi(client)
+serving_api = kclient.api.serving_api.ServingApi(client)
 
 serving_workspace_name, serving_name, port, model = 'expo-recall', 'demo-0-0-1', '9000', 'any'
 
