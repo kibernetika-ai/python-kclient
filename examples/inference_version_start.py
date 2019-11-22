@@ -8,76 +8,18 @@ client = swagger_client.ApiClient(config.get())
 
 inference_api = swagger_client.api.inference_api.InferenceApi(client)
 
-workspace_name, catalog_inference_name, version, serving_name = 'expo-recall', 'ponchik2', '2.0.0', 'ponchik2-2-0-0'
+workspace_name, catalog_inference_name, version = 'kuberlab-demo', 'demo', '0.0.1'
+serving_workspace_name, serving_name = 'expo-recall', 'demo-0-0-1'
 
 start_request = inference_run_serving_request.InferenceRunServingRequest(
     name=serving_name,
-    workspace_name=workspace_name,
-    cluster_id='edge',
+    workspace_name=serving_workspace_name,
+    cluster_id='shared/17431',
     values={
-        'face_detect_threshold': 0.8,
-        'head_pose_thresholds': '25,25,20',
-        'test_hidden_val': 'just for test 1.0.2',
-        'recognizer_model_location': '',
-        'recognizer_model_bearer_key': '',
+        'prefix': 'Generated in python KClient: ',
         'source': {
-            'repository': 'https://github.com/kuberlab/ponchik2'
+            'repository': 'https://github.com/kibernetika-ai/demo-srv'
         },
-        'face_detection': {
-            'workspace': 'expo-recall',
-            'model': 'face-detection-adas-0001',
-            'version': '0.0.1'
-        },
-        'head_pose': {
-            'workspace': 'expo-recall',
-            'model': 'head-pose-estimation-adas-0001',
-            'version': '0.0.1'
-        },
-        'facenet': {
-            'workspace': 'expo-recall',
-            'model': 'facenet-pretrained',
-            'version': '1.0.0-vgg-openvino-cpu'
-        },
-        'dataset': {
-            'workspace': 'expo-recall',
-            'dataset': 'beauty-face',
-            'version': '1.0.1'
-        },
-        'stream': {
-            'key': 'live-old',
-            'input': 'server',
-            'output': 'mjpg',
-            'description': 'none',
-            'params': {
-                'cloud_status': '3',
-                'output_fps': '15'
-            }
-        },
-        'streams':[
-            {
-                'key':'live',
-                'input': 'server',
-                'output': 'mjpg',
-                'description': 'none',
-                'params': {
-                    'cloud_status': '3',
-                    'output_fps': '15'
-                }
-            },
-            {
-                'key': 'live2',
-                'input': 'server',
-                'output': 'mjpg',
-                'description': 'none',
-                'params': {
-                    'cloud_status': '3',
-                    'output_fps': '15'
-                }
-            }
-        ],
-        'filter_keep': False,
-        'recognizer_keep': False,
-        'debug': False
     },
 )
 try:

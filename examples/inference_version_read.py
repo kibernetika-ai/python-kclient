@@ -7,7 +7,7 @@ client = swagger_client.ApiClient(config.get())
 
 inference_api = swagger_client.api.inference_api.InferenceApi(client)
 
-workspace_name, catalog_inference_name, version = 'expo-recall', 'ponchik2', '2.0.0'
+workspace_name, catalog_inference_name, version = 'kuberlab-demo', 'demo', '0.0.1'
 try:
     print(f'Trying to read inference version {workspace_name}/{catalog_inference_name}:{version}...')
     version_info = inference_api.inference_inference_version_info(workspace_name, catalog_inference_name, version)
