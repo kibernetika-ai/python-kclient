@@ -31,35 +31,79 @@ class MlappS3BucketSource(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'region': 'str',
-        'server': 'str',
+        'account_id': 'str',
         'bucket': 'str',
-        'account_id': 'str'
+        'region': 'str',
+        'server': 'str'
     }
 
     attribute_map = {
-        'region': 'region',
-        'server': 'server',
+        'account_id': 'accountId',
         'bucket': 'bucket',
-        'account_id': 'accountId'
+        'region': 'region',
+        'server': 'server'
     }
 
-    def __init__(self, region=None, server=None, bucket=None, account_id=None):  # noqa: E501
+    def __init__(self, account_id=None, bucket=None, region=None, server=None):  # noqa: E501
         """MlappS3BucketSource - a model defined in Swagger"""  # noqa: E501
 
+        self._account_id = None
+        self._bucket = None
         self._region = None
         self._server = None
-        self._bucket = None
-        self._account_id = None
         self.discriminator = None
 
+        if account_id is not None:
+            self.account_id = account_id
+        self.bucket = bucket
         if region is not None:
             self.region = region
         if server is not None:
             self.server = server
-        self.bucket = bucket
-        if account_id is not None:
-            self.account_id = account_id
+
+    @property
+    def account_id(self):
+        """Gets the account_id of this MlappS3BucketSource.  # noqa: E501
+
+
+        :return: The account_id of this MlappS3BucketSource.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_id
+
+    @account_id.setter
+    def account_id(self, account_id):
+        """Sets the account_id of this MlappS3BucketSource.
+
+
+        :param account_id: The account_id of this MlappS3BucketSource.  # noqa: E501
+        :type: str
+        """
+
+        self._account_id = account_id
+
+    @property
+    def bucket(self):
+        """Gets the bucket of this MlappS3BucketSource.  # noqa: E501
+
+
+        :return: The bucket of this MlappS3BucketSource.  # noqa: E501
+        :rtype: str
+        """
+        return self._bucket
+
+    @bucket.setter
+    def bucket(self, bucket):
+        """Sets the bucket of this MlappS3BucketSource.
+
+
+        :param bucket: The bucket of this MlappS3BucketSource.  # noqa: E501
+        :type: str
+        """
+        if bucket is None:
+            raise ValueError("Invalid value for `bucket`, must not be `None`")  # noqa: E501
+
+        self._bucket = bucket
 
     @property
     def region(self):
@@ -102,50 +146,6 @@ class MlappS3BucketSource(object):
         """
 
         self._server = server
-
-    @property
-    def bucket(self):
-        """Gets the bucket of this MlappS3BucketSource.  # noqa: E501
-
-
-        :return: The bucket of this MlappS3BucketSource.  # noqa: E501
-        :rtype: str
-        """
-        return self._bucket
-
-    @bucket.setter
-    def bucket(self, bucket):
-        """Sets the bucket of this MlappS3BucketSource.
-
-
-        :param bucket: The bucket of this MlappS3BucketSource.  # noqa: E501
-        :type: str
-        """
-        if bucket is None:
-            raise ValueError("Invalid value for `bucket`, must not be `None`")  # noqa: E501
-
-        self._bucket = bucket
-
-    @property
-    def account_id(self):
-        """Gets the account_id of this MlappS3BucketSource.  # noqa: E501
-
-
-        :return: The account_id of this MlappS3BucketSource.  # noqa: E501
-        :rtype: str
-        """
-        return self._account_id
-
-    @account_id.setter
-    def account_id(self, account_id):
-        """Sets the account_id of this MlappS3BucketSource.
-
-
-        :param account_id: The account_id of this MlappS3BucketSource.  # noqa: E501
-        :type: str
-        """
-
-        self._account_id = account_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

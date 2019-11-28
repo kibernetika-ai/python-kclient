@@ -38,6 +38,7 @@ from kclient.models.mlapp_serving_spec_param_value import MlappServingSpecParamV
 from kclient.models.mlapp_universal_serving import MlappUniversalServing
 from kclient.models.mlapp_volume import MlappVolume
 from kclient.models.mlapp_volume_mount import MlappVolumeMount
+from kclient.models.models_arbitrary import ModelsArbitrary
 from kclient.models.models_inference_version import ModelsInferenceVersion
 from kclient.models.models_serving import ModelsServing
 from kclient.models.models_task_form_element import ModelsTaskFormElement

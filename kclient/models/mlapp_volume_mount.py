@@ -31,103 +31,40 @@ class MlappVolumeMount(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'sub_path': 'str',
-        'read_only': 'bool',
-        'mount_path': 'str',
         'git_revision': 'str',
-        'name': 'str'
+        'mount_path': 'str',
+        'name': 'str',
+        'read_only': 'bool',
+        'sub_path': 'str'
     }
 
     attribute_map = {
-        'sub_path': 'subPath',
-        'read_only': 'readOnly',
-        'mount_path': 'mountPath',
         'git_revision': 'gitRevision',
-        'name': 'name'
+        'mount_path': 'mountPath',
+        'name': 'name',
+        'read_only': 'readOnly',
+        'sub_path': 'subPath'
     }
 
-    def __init__(self, sub_path=None, read_only=None, mount_path=None, git_revision=None, name=None):  # noqa: E501
+    def __init__(self, git_revision=None, mount_path=None, name=None, read_only=None, sub_path=None):  # noqa: E501
         """MlappVolumeMount - a model defined in Swagger"""  # noqa: E501
 
-        self._sub_path = None
-        self._read_only = None
-        self._mount_path = None
         self._git_revision = None
+        self._mount_path = None
         self._name = None
+        self._read_only = None
+        self._sub_path = None
         self.discriminator = None
 
-        if sub_path is not None:
-            self.sub_path = sub_path
-        if read_only is not None:
-            self.read_only = read_only
-        if mount_path is not None:
-            self.mount_path = mount_path
         if git_revision is not None:
             self.git_revision = git_revision
+        if mount_path is not None:
+            self.mount_path = mount_path
         self.name = name
-
-    @property
-    def sub_path(self):
-        """Gets the sub_path of this MlappVolumeMount.  # noqa: E501
-
-
-        :return: The sub_path of this MlappVolumeMount.  # noqa: E501
-        :rtype: str
-        """
-        return self._sub_path
-
-    @sub_path.setter
-    def sub_path(self, sub_path):
-        """Sets the sub_path of this MlappVolumeMount.
-
-
-        :param sub_path: The sub_path of this MlappVolumeMount.  # noqa: E501
-        :type: str
-        """
-
-        self._sub_path = sub_path
-
-    @property
-    def read_only(self):
-        """Gets the read_only of this MlappVolumeMount.  # noqa: E501
-
-
-        :return: The read_only of this MlappVolumeMount.  # noqa: E501
-        :rtype: bool
-        """
-        return self._read_only
-
-    @read_only.setter
-    def read_only(self, read_only):
-        """Sets the read_only of this MlappVolumeMount.
-
-
-        :param read_only: The read_only of this MlappVolumeMount.  # noqa: E501
-        :type: bool
-        """
-
-        self._read_only = read_only
-
-    @property
-    def mount_path(self):
-        """Gets the mount_path of this MlappVolumeMount.  # noqa: E501
-
-
-        :return: The mount_path of this MlappVolumeMount.  # noqa: E501
-        :rtype: str
-        """
-        return self._mount_path
-
-    @mount_path.setter
-    def mount_path(self, mount_path):
-        """Sets the mount_path of this MlappVolumeMount.
-
-
-        :param mount_path: The mount_path of this MlappVolumeMount.  # noqa: E501
-        :type: str
-        """
-
-        self._mount_path = mount_path
+        if read_only is not None:
+            self.read_only = read_only
+        if sub_path is not None:
+            self.sub_path = sub_path
 
     @property
     def git_revision(self):
@@ -151,6 +88,27 @@ class MlappVolumeMount(object):
         self._git_revision = git_revision
 
     @property
+    def mount_path(self):
+        """Gets the mount_path of this MlappVolumeMount.  # noqa: E501
+
+
+        :return: The mount_path of this MlappVolumeMount.  # noqa: E501
+        :rtype: str
+        """
+        return self._mount_path
+
+    @mount_path.setter
+    def mount_path(self, mount_path):
+        """Sets the mount_path of this MlappVolumeMount.
+
+
+        :param mount_path: The mount_path of this MlappVolumeMount.  # noqa: E501
+        :type: str
+        """
+
+        self._mount_path = mount_path
+
+    @property
     def name(self):
         """Gets the name of this MlappVolumeMount.  # noqa: E501
 
@@ -172,6 +130,48 @@ class MlappVolumeMount(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def read_only(self):
+        """Gets the read_only of this MlappVolumeMount.  # noqa: E501
+
+
+        :return: The read_only of this MlappVolumeMount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._read_only
+
+    @read_only.setter
+    def read_only(self, read_only):
+        """Sets the read_only of this MlappVolumeMount.
+
+
+        :param read_only: The read_only of this MlappVolumeMount.  # noqa: E501
+        :type: bool
+        """
+
+        self._read_only = read_only
+
+    @property
+    def sub_path(self):
+        """Gets the sub_path of this MlappVolumeMount.  # noqa: E501
+
+
+        :return: The sub_path of this MlappVolumeMount.  # noqa: E501
+        :rtype: str
+        """
+        return self._sub_path
+
+    @sub_path.setter
+    def sub_path(self, sub_path):
+        """Sets the sub_path of this MlappVolumeMount.
+
+
+        :param sub_path: The sub_path of this MlappVolumeMount.  # noqa: E501
+        :type: str
+        """
+
+        self._sub_path = sub_path
 
     def to_dict(self):
         """Returns the model properties as a dict"""

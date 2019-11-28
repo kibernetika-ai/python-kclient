@@ -31,77 +31,35 @@ class MlappPort(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'target_port': 'int',
-        'protocol': 'str',
         'name': 'str',
-        'port': 'int'
+        'port': 'int',
+        'protocol': 'str',
+        'target_port': 'int'
     }
 
     attribute_map = {
-        'target_port': 'targetPort',
-        'protocol': 'protocol',
         'name': 'name',
-        'port': 'port'
+        'port': 'port',
+        'protocol': 'protocol',
+        'target_port': 'targetPort'
     }
 
-    def __init__(self, target_port=None, protocol=None, name=None, port=None):  # noqa: E501
+    def __init__(self, name=None, port=None, protocol=None, target_port=None):  # noqa: E501
         """MlappPort - a model defined in Swagger"""  # noqa: E501
 
-        self._target_port = None
-        self._protocol = None
         self._name = None
         self._port = None
+        self._protocol = None
+        self._target_port = None
         self.discriminator = None
 
-        if target_port is not None:
-            self.target_port = target_port
-        if protocol is not None:
-            self.protocol = protocol
         self.name = name
         if port is not None:
             self.port = port
-
-    @property
-    def target_port(self):
-        """Gets the target_port of this MlappPort.  # noqa: E501
-
-
-        :return: The target_port of this MlappPort.  # noqa: E501
-        :rtype: int
-        """
-        return self._target_port
-
-    @target_port.setter
-    def target_port(self, target_port):
-        """Sets the target_port of this MlappPort.
-
-
-        :param target_port: The target_port of this MlappPort.  # noqa: E501
-        :type: int
-        """
-
-        self._target_port = target_port
-
-    @property
-    def protocol(self):
-        """Gets the protocol of this MlappPort.  # noqa: E501
-
-
-        :return: The protocol of this MlappPort.  # noqa: E501
-        :rtype: str
-        """
-        return self._protocol
-
-    @protocol.setter
-    def protocol(self, protocol):
-        """Sets the protocol of this MlappPort.
-
-
-        :param protocol: The protocol of this MlappPort.  # noqa: E501
-        :type: str
-        """
-
-        self._protocol = protocol
+        if protocol is not None:
+            self.protocol = protocol
+        if target_port is not None:
+            self.target_port = target_port
 
     @property
     def name(self):
@@ -146,6 +104,48 @@ class MlappPort(object):
         """
 
         self._port = port
+
+    @property
+    def protocol(self):
+        """Gets the protocol of this MlappPort.  # noqa: E501
+
+
+        :return: The protocol of this MlappPort.  # noqa: E501
+        :rtype: str
+        """
+        return self._protocol
+
+    @protocol.setter
+    def protocol(self, protocol):
+        """Sets the protocol of this MlappPort.
+
+
+        :param protocol: The protocol of this MlappPort.  # noqa: E501
+        :type: str
+        """
+
+        self._protocol = protocol
+
+    @property
+    def target_port(self):
+        """Gets the target_port of this MlappPort.  # noqa: E501
+
+
+        :return: The target_port of this MlappPort.  # noqa: E501
+        :rtype: int
+        """
+        return self._target_port
+
+    @target_port.setter
+    def target_port(self, target_port):
+        """Sets the target_port of this MlappPort.
+
+
+        :param target_port: The target_port of this MlappPort.  # noqa: E501
+        :type: int
+        """
+
+        self._target_port = target_port
 
     def to_dict(self):
         """Returns the model properties as a dict"""

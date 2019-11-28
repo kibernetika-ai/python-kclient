@@ -31,78 +31,36 @@ class MlappServingResponseParam(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'shape': 'list[int]',
-        'type': 'str',
         'description': 'str',
-        'name': 'str'
+        'name': 'str',
+        'shape': 'list[int]',
+        'type': 'str'
     }
 
     attribute_map = {
-        'shape': 'shape',
-        'type': 'type',
         'description': 'description',
-        'name': 'name'
+        'name': 'name',
+        'shape': 'shape',
+        'type': 'type'
     }
 
-    def __init__(self, shape=None, type=None, description=None, name=None):  # noqa: E501
+    def __init__(self, description=None, name=None, shape=None, type=None):  # noqa: E501
         """MlappServingResponseParam - a model defined in Swagger"""  # noqa: E501
 
-        self._shape = None
-        self._type = None
         self._description = None
         self._name = None
+        self._shape = None
+        self._type = None
         self.discriminator = None
 
-        if shape is not None:
-            self.shape = shape
-        if type is not None:
-            self.type = type
         if description is not None:
             self.description = description
         if name is not None:
             self.name = name
-
-    @property
-    def shape(self):
-        """Gets the shape of this MlappServingResponseParam.  # noqa: E501
-
-
-        :return: The shape of this MlappServingResponseParam.  # noqa: E501
-        :rtype: list[int]
-        """
-        return self._shape
-
-    @shape.setter
-    def shape(self, shape):
-        """Sets the shape of this MlappServingResponseParam.
-
-
-        :param shape: The shape of this MlappServingResponseParam.  # noqa: E501
-        :type: list[int]
-        """
-
-        self._shape = shape
-
-    @property
-    def type(self):
-        """Gets the type of this MlappServingResponseParam.  # noqa: E501
-
-
-        :return: The type of this MlappServingResponseParam.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this MlappServingResponseParam.
-
-
-        :param type: The type of this MlappServingResponseParam.  # noqa: E501
-        :type: str
-        """
-
-        self._type = type
+        if shape is not None:
+            self.shape = shape
+        if type is not None:
+            self.type = type
 
     @property
     def description(self):
@@ -145,6 +103,48 @@ class MlappServingResponseParam(object):
         """
 
         self._name = name
+
+    @property
+    def shape(self):
+        """Gets the shape of this MlappServingResponseParam.  # noqa: E501
+
+
+        :return: The shape of this MlappServingResponseParam.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """Sets the shape of this MlappServingResponseParam.
+
+
+        :param shape: The shape of this MlappServingResponseParam.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._shape = shape
+
+    @property
+    def type(self):
+        """Gets the type of this MlappServingResponseParam.  # noqa: E501
+
+
+        :return: The type of this MlappServingResponseParam.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this MlappServingResponseParam.
+
+
+        :param type: The type of this MlappServingResponseParam.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

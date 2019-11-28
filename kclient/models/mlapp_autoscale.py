@@ -31,78 +31,36 @@ class MlappAutoscale(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'target_average_utilization': 'int',
-        'min_replicas': 'int',
         'enabled': 'bool',
-        'max_replicas': 'int'
+        'max_replicas': 'int',
+        'min_replicas': 'int',
+        'target_average_utilization': 'int'
     }
 
     attribute_map = {
-        'target_average_utilization': 'target_average_utilization',
-        'min_replicas': 'min_replicas',
         'enabled': 'enabled',
-        'max_replicas': 'max_replicas'
+        'max_replicas': 'max_replicas',
+        'min_replicas': 'min_replicas',
+        'target_average_utilization': 'target_average_utilization'
     }
 
-    def __init__(self, target_average_utilization=None, min_replicas=None, enabled=None, max_replicas=None):  # noqa: E501
+    def __init__(self, enabled=None, max_replicas=None, min_replicas=None, target_average_utilization=None):  # noqa: E501
         """MlappAutoscale - a model defined in Swagger"""  # noqa: E501
 
-        self._target_average_utilization = None
-        self._min_replicas = None
         self._enabled = None
         self._max_replicas = None
+        self._min_replicas = None
+        self._target_average_utilization = None
         self.discriminator = None
 
-        if target_average_utilization is not None:
-            self.target_average_utilization = target_average_utilization
-        if min_replicas is not None:
-            self.min_replicas = min_replicas
         if enabled is not None:
             self.enabled = enabled
         if max_replicas is not None:
             self.max_replicas = max_replicas
-
-    @property
-    def target_average_utilization(self):
-        """Gets the target_average_utilization of this MlappAutoscale.  # noqa: E501
-
-
-        :return: The target_average_utilization of this MlappAutoscale.  # noqa: E501
-        :rtype: int
-        """
-        return self._target_average_utilization
-
-    @target_average_utilization.setter
-    def target_average_utilization(self, target_average_utilization):
-        """Sets the target_average_utilization of this MlappAutoscale.
-
-
-        :param target_average_utilization: The target_average_utilization of this MlappAutoscale.  # noqa: E501
-        :type: int
-        """
-
-        self._target_average_utilization = target_average_utilization
-
-    @property
-    def min_replicas(self):
-        """Gets the min_replicas of this MlappAutoscale.  # noqa: E501
-
-
-        :return: The min_replicas of this MlappAutoscale.  # noqa: E501
-        :rtype: int
-        """
-        return self._min_replicas
-
-    @min_replicas.setter
-    def min_replicas(self, min_replicas):
-        """Sets the min_replicas of this MlappAutoscale.
-
-
-        :param min_replicas: The min_replicas of this MlappAutoscale.  # noqa: E501
-        :type: int
-        """
-
-        self._min_replicas = min_replicas
+        if min_replicas is not None:
+            self.min_replicas = min_replicas
+        if target_average_utilization is not None:
+            self.target_average_utilization = target_average_utilization
 
     @property
     def enabled(self):
@@ -145,6 +103,48 @@ class MlappAutoscale(object):
         """
 
         self._max_replicas = max_replicas
+
+    @property
+    def min_replicas(self):
+        """Gets the min_replicas of this MlappAutoscale.  # noqa: E501
+
+
+        :return: The min_replicas of this MlappAutoscale.  # noqa: E501
+        :rtype: int
+        """
+        return self._min_replicas
+
+    @min_replicas.setter
+    def min_replicas(self, min_replicas):
+        """Sets the min_replicas of this MlappAutoscale.
+
+
+        :param min_replicas: The min_replicas of this MlappAutoscale.  # noqa: E501
+        :type: int
+        """
+
+        self._min_replicas = min_replicas
+
+    @property
+    def target_average_utilization(self):
+        """Gets the target_average_utilization of this MlappAutoscale.  # noqa: E501
+
+
+        :return: The target_average_utilization of this MlappAutoscale.  # noqa: E501
+        :rtype: int
+        """
+        return self._target_average_utilization
+
+    @target_average_utilization.setter
+    def target_average_utilization(self, target_average_utilization):
+        """Sets the target_average_utilization of this MlappAutoscale.
+
+
+        :param target_average_utilization: The target_average_utilization of this MlappAutoscale.  # noqa: E501
+        :type: int
+        """
+
+        self._target_average_utilization = target_average_utilization
 
     def to_dict(self):
         """Returns the model properties as a dict"""

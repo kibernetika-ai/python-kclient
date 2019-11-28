@@ -31,35 +31,56 @@ class MlappDatasetFSSource(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'dataset': 'str',
         'server': 'str',
         'version': 'str',
-        'workspace': 'str',
-        'dataset': 'str'
+        'workspace': 'str'
     }
 
     attribute_map = {
+        'dataset': 'dataset',
         'server': 'server',
         'version': 'version',
-        'workspace': 'workspace',
-        'dataset': 'dataset'
+        'workspace': 'workspace'
     }
 
-    def __init__(self, server=None, version=None, workspace=None, dataset=None):  # noqa: E501
+    def __init__(self, dataset=None, server=None, version=None, workspace=None):  # noqa: E501
         """MlappDatasetFSSource - a model defined in Swagger"""  # noqa: E501
 
+        self._dataset = None
         self._server = None
         self._version = None
         self._workspace = None
-        self._dataset = None
         self.discriminator = None
 
+        if dataset is not None:
+            self.dataset = dataset
         if server is not None:
             self.server = server
         if version is not None:
             self.version = version
         self.workspace = workspace
-        if dataset is not None:
-            self.dataset = dataset
+
+    @property
+    def dataset(self):
+        """Gets the dataset of this MlappDatasetFSSource.  # noqa: E501
+
+
+        :return: The dataset of this MlappDatasetFSSource.  # noqa: E501
+        :rtype: str
+        """
+        return self._dataset
+
+    @dataset.setter
+    def dataset(self, dataset):
+        """Sets the dataset of this MlappDatasetFSSource.
+
+
+        :param dataset: The dataset of this MlappDatasetFSSource.  # noqa: E501
+        :type: str
+        """
+
+        self._dataset = dataset
 
     @property
     def server(self):
@@ -125,27 +146,6 @@ class MlappDatasetFSSource(object):
             raise ValueError("Invalid value for `workspace`, must not be `None`")  # noqa: E501
 
         self._workspace = workspace
-
-    @property
-    def dataset(self):
-        """Gets the dataset of this MlappDatasetFSSource.  # noqa: E501
-
-
-        :return: The dataset of this MlappDatasetFSSource.  # noqa: E501
-        :rtype: str
-        """
-        return self._dataset
-
-    @dataset.setter
-    def dataset(self, dataset):
-        """Sets the dataset of this MlappDatasetFSSource.
-
-
-        :param dataset: The dataset of this MlappDatasetFSSource.  # noqa: E501
-        :type: str
-        """
-
-        self._dataset = dataset
 
     def to_dict(self):
         """Returns the model properties as a dict"""

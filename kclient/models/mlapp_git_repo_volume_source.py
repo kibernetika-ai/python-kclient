@@ -31,50 +31,115 @@ class MlappGitRepoVolumeSource(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'access_token': 'str',
+        'account_id': 'str',
+        'directory': 'str',
         'private_key': 'str',
         'repository': 'str',
-        'access_token': 'str',
-        'directory': 'str',
-        'account_id': 'str',
-        'user_name': 'str',
-        'revision': 'str'
+        'revision': 'str',
+        'user_name': 'str'
     }
 
     attribute_map = {
+        'access_token': 'access_token',
+        'account_id': 'accountId',
+        'directory': 'directory',
         'private_key': 'private_key',
         'repository': 'repository',
-        'access_token': 'access_token',
-        'directory': 'directory',
-        'account_id': 'accountId',
-        'user_name': 'user_name',
-        'revision': 'revision'
+        'revision': 'revision',
+        'user_name': 'user_name'
     }
 
-    def __init__(self, private_key=None, repository=None, access_token=None, directory=None, account_id=None, user_name=None, revision=None):  # noqa: E501
+    def __init__(self, access_token=None, account_id=None, directory=None, private_key=None, repository=None, revision=None, user_name=None):  # noqa: E501
         """MlappGitRepoVolumeSource - a model defined in Swagger"""  # noqa: E501
 
+        self._access_token = None
+        self._account_id = None
+        self._directory = None
         self._private_key = None
         self._repository = None
-        self._access_token = None
-        self._directory = None
-        self._account_id = None
-        self._user_name = None
         self._revision = None
+        self._user_name = None
         self.discriminator = None
 
+        if access_token is not None:
+            self.access_token = access_token
+        if account_id is not None:
+            self.account_id = account_id
+        if directory is not None:
+            self.directory = directory
         if private_key is not None:
             self.private_key = private_key
         self.repository = repository
-        if access_token is not None:
-            self.access_token = access_token
-        if directory is not None:
-            self.directory = directory
-        if account_id is not None:
-            self.account_id = account_id
-        if user_name is not None:
-            self.user_name = user_name
         if revision is not None:
             self.revision = revision
+        if user_name is not None:
+            self.user_name = user_name
+
+    @property
+    def access_token(self):
+        """Gets the access_token of this MlappGitRepoVolumeSource.  # noqa: E501
+
+
+        :return: The access_token of this MlappGitRepoVolumeSource.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_token
+
+    @access_token.setter
+    def access_token(self, access_token):
+        """Sets the access_token of this MlappGitRepoVolumeSource.
+
+
+        :param access_token: The access_token of this MlappGitRepoVolumeSource.  # noqa: E501
+        :type: str
+        """
+
+        self._access_token = access_token
+
+    @property
+    def account_id(self):
+        """Gets the account_id of this MlappGitRepoVolumeSource.  # noqa: E501
+
+
+        :return: The account_id of this MlappGitRepoVolumeSource.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_id
+
+    @account_id.setter
+    def account_id(self, account_id):
+        """Sets the account_id of this MlappGitRepoVolumeSource.
+
+
+        :param account_id: The account_id of this MlappGitRepoVolumeSource.  # noqa: E501
+        :type: str
+        """
+
+        self._account_id = account_id
+
+    @property
+    def directory(self):
+        """Gets the directory of this MlappGitRepoVolumeSource.  # noqa: E501
+
+        Target directory name. Must not contain or start with '..'.  If '.' is supplied, the volume directory will be the git repository.  Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name.  # noqa: E501
+
+        :return: The directory of this MlappGitRepoVolumeSource.  # noqa: E501
+        :rtype: str
+        """
+        return self._directory
+
+    @directory.setter
+    def directory(self, directory):
+        """Sets the directory of this MlappGitRepoVolumeSource.
+
+        Target directory name. Must not contain or start with '..'.  If '.' is supplied, the volume directory will be the git repository.  Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name.  # noqa: E501
+
+        :param directory: The directory of this MlappGitRepoVolumeSource.  # noqa: E501
+        :type: str
+        """
+
+        self._directory = directory
 
     @property
     def private_key(self):
@@ -123,92 +188,6 @@ class MlappGitRepoVolumeSource(object):
         self._repository = repository
 
     @property
-    def access_token(self):
-        """Gets the access_token of this MlappGitRepoVolumeSource.  # noqa: E501
-
-
-        :return: The access_token of this MlappGitRepoVolumeSource.  # noqa: E501
-        :rtype: str
-        """
-        return self._access_token
-
-    @access_token.setter
-    def access_token(self, access_token):
-        """Sets the access_token of this MlappGitRepoVolumeSource.
-
-
-        :param access_token: The access_token of this MlappGitRepoVolumeSource.  # noqa: E501
-        :type: str
-        """
-
-        self._access_token = access_token
-
-    @property
-    def directory(self):
-        """Gets the directory of this MlappGitRepoVolumeSource.  # noqa: E501
-
-        Target directory name. Must not contain or start with '..'.  If '.' is supplied, the volume directory will be the git repository.  Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name.  # noqa: E501
-
-        :return: The directory of this MlappGitRepoVolumeSource.  # noqa: E501
-        :rtype: str
-        """
-        return self._directory
-
-    @directory.setter
-    def directory(self, directory):
-        """Sets the directory of this MlappGitRepoVolumeSource.
-
-        Target directory name. Must not contain or start with '..'.  If '.' is supplied, the volume directory will be the git repository.  Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name.  # noqa: E501
-
-        :param directory: The directory of this MlappGitRepoVolumeSource.  # noqa: E501
-        :type: str
-        """
-
-        self._directory = directory
-
-    @property
-    def account_id(self):
-        """Gets the account_id of this MlappGitRepoVolumeSource.  # noqa: E501
-
-
-        :return: The account_id of this MlappGitRepoVolumeSource.  # noqa: E501
-        :rtype: str
-        """
-        return self._account_id
-
-    @account_id.setter
-    def account_id(self, account_id):
-        """Sets the account_id of this MlappGitRepoVolumeSource.
-
-
-        :param account_id: The account_id of this MlappGitRepoVolumeSource.  # noqa: E501
-        :type: str
-        """
-
-        self._account_id = account_id
-
-    @property
-    def user_name(self):
-        """Gets the user_name of this MlappGitRepoVolumeSource.  # noqa: E501
-
-
-        :return: The user_name of this MlappGitRepoVolumeSource.  # noqa: E501
-        :rtype: str
-        """
-        return self._user_name
-
-    @user_name.setter
-    def user_name(self, user_name):
-        """Sets the user_name of this MlappGitRepoVolumeSource.
-
-
-        :param user_name: The user_name of this MlappGitRepoVolumeSource.  # noqa: E501
-        :type: str
-        """
-
-        self._user_name = user_name
-
-    @property
     def revision(self):
         """Gets the revision of this MlappGitRepoVolumeSource.  # noqa: E501
 
@@ -230,6 +209,27 @@ class MlappGitRepoVolumeSource(object):
         """
 
         self._revision = revision
+
+    @property
+    def user_name(self):
+        """Gets the user_name of this MlappGitRepoVolumeSource.  # noqa: E501
+
+
+        :return: The user_name of this MlappGitRepoVolumeSource.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_name
+
+    @user_name.setter
+    def user_name(self, user_name):
+        """Sets the user_name of this MlappGitRepoVolumeSource.
+
+
+        :param user_name: The user_name of this MlappGitRepoVolumeSource.  # noqa: E501
+        :type: str
+        """
+
+        self._user_name = user_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

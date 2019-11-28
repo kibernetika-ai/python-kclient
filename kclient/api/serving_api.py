@@ -459,11 +459,11 @@ class ServingApi(object):
 
         :param async_req bool
         :param str model: Serving model (required)
-        :param str body: (required)
+        :param ModelsArbitrary body: (required)
         :param str workspace: Workspace's name (required)
         :param str serving: Serving's Name or ID (required)
         :param str port: Serving port (required)
-        :return: str
+        :return: ModelsArbitrary
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -484,11 +484,11 @@ class ServingApi(object):
 
         :param async_req bool
         :param str model: Serving model (required)
-        :param str body: (required)
+        :param ModelsArbitrary body: (required)
         :param str workspace: Workspace's name (required)
         :param str serving: Serving's Name or ID (required)
         :param str port: Serving port (required)
-        :return: str
+        :return: ModelsArbitrary
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -557,7 +557,7 @@ class ServingApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data', 'application/json'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['Bearer']  # noqa: E501
@@ -570,7 +570,7 @@ class ServingApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type='ModelsArbitrary',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -589,11 +589,11 @@ class ServingApi(object):
         :param async_req bool
         :param str model: Serving model (required)
         :param str signature: Serving signature (required)
-        :param str body: (required)
+        :param ModelsArbitrary body: (required)
         :param str workspace: Workspace's name (required)
         :param str serving: Serving's Name or ID (required)
         :param str port: Serving port (required)
-        :return: str
+        :return: ModelsArbitrary
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -615,11 +615,11 @@ class ServingApi(object):
         :param async_req bool
         :param str model: Serving model (required)
         :param str signature: Serving signature (required)
-        :param str body: (required)
+        :param ModelsArbitrary body: (required)
         :param str workspace: Workspace's name (required)
         :param str serving: Serving's Name or ID (required)
         :param str port: Serving port (required)
-        :return: str
+        :return: ModelsArbitrary
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -694,7 +694,7 @@ class ServingApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data', 'application/json'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['Bearer']  # noqa: E501
@@ -707,7 +707,7 @@ class ServingApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type='ModelsArbitrary',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -727,11 +727,11 @@ class ServingApi(object):
         :param str model: Serving model (required)
         :param str signature: Serving signature (required)
         :param str version: Serving version (required)
-        :param str body: (required)
+        :param ModelsArbitrary body: (required)
         :param str workspace: Workspace's name (required)
         :param str serving: Serving's Name or ID (required)
         :param str port: Serving port (required)
-        :return: str
+        :return: ModelsArbitrary
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -754,11 +754,11 @@ class ServingApi(object):
         :param str model: Serving model (required)
         :param str signature: Serving signature (required)
         :param str version: Serving version (required)
-        :param str body: (required)
+        :param ModelsArbitrary body: (required)
         :param str workspace: Workspace's name (required)
         :param str serving: Serving's Name or ID (required)
         :param str port: Serving port (required)
-        :return: str
+        :return: ModelsArbitrary
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -839,7 +839,7 @@ class ServingApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data', 'application/json'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['Bearer']  # noqa: E501
@@ -852,7 +852,7 @@ class ServingApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type='ModelsArbitrary',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

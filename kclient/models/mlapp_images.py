@@ -31,47 +31,24 @@ class MlappImages(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'gpu': 'str',
-        'cpu': 'str'
+        'cpu': 'str',
+        'gpu': 'str'
     }
 
     attribute_map = {
-        'gpu': 'gpu',
-        'cpu': 'cpu'
+        'cpu': 'cpu',
+        'gpu': 'gpu'
     }
 
-    def __init__(self, gpu=None, cpu=None):  # noqa: E501
+    def __init__(self, cpu=None, gpu=None):  # noqa: E501
         """MlappImages - a model defined in Swagger"""  # noqa: E501
 
-        self._gpu = None
         self._cpu = None
+        self._gpu = None
         self.discriminator = None
 
-        self.gpu = gpu
         self.cpu = cpu
-
-    @property
-    def gpu(self):
-        """Gets the gpu of this MlappImages.  # noqa: E501
-
-
-        :return: The gpu of this MlappImages.  # noqa: E501
-        :rtype: str
-        """
-        return self._gpu
-
-    @gpu.setter
-    def gpu(self, gpu):
-        """Sets the gpu of this MlappImages.
-
-
-        :param gpu: The gpu of this MlappImages.  # noqa: E501
-        :type: str
-        """
-        if gpu is None:
-            raise ValueError("Invalid value for `gpu`, must not be `None`")  # noqa: E501
-
-        self._gpu = gpu
+        self.gpu = gpu
 
     @property
     def cpu(self):
@@ -95,6 +72,29 @@ class MlappImages(object):
             raise ValueError("Invalid value for `cpu`, must not be `None`")  # noqa: E501
 
         self._cpu = cpu
+
+    @property
+    def gpu(self):
+        """Gets the gpu of this MlappImages.  # noqa: E501
+
+
+        :return: The gpu of this MlappImages.  # noqa: E501
+        :rtype: str
+        """
+        return self._gpu
+
+    @gpu.setter
+    def gpu(self, gpu):
+        """Sets the gpu of this MlappImages.
+
+
+        :param gpu: The gpu of this MlappImages.  # noqa: E501
+        :type: str
+        """
+        if gpu is None:
+            raise ValueError("Invalid value for `gpu`, must not be `None`")  # noqa: E501
+
+        self._gpu = gpu
 
     def to_dict(self):
         """Returns the model properties as a dict"""

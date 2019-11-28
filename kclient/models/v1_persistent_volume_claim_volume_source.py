@@ -31,48 +31,25 @@ class V1PersistentVolumeClaimVolumeSource(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'read_only': 'bool',
-        'claim_name': 'str'
+        'claim_name': 'str',
+        'read_only': 'bool'
     }
 
     attribute_map = {
-        'read_only': 'readOnly',
-        'claim_name': 'claimName'
+        'claim_name': 'claimName',
+        'read_only': 'readOnly'
     }
 
-    def __init__(self, read_only=None, claim_name=None):  # noqa: E501
+    def __init__(self, claim_name=None, read_only=None):  # noqa: E501
         """V1PersistentVolumeClaimVolumeSource - a model defined in Swagger"""  # noqa: E501
 
-        self._read_only = None
         self._claim_name = None
+        self._read_only = None
         self.discriminator = None
 
+        self.claim_name = claim_name
         if read_only is not None:
             self.read_only = read_only
-        self.claim_name = claim_name
-
-    @property
-    def read_only(self):
-        """Gets the read_only of this V1PersistentVolumeClaimVolumeSource.  # noqa: E501
-
-        Will force the ReadOnly setting in VolumeMounts. Default false.  # noqa: E501
-
-        :return: The read_only of this V1PersistentVolumeClaimVolumeSource.  # noqa: E501
-        :rtype: bool
-        """
-        return self._read_only
-
-    @read_only.setter
-    def read_only(self, read_only):
-        """Sets the read_only of this V1PersistentVolumeClaimVolumeSource.
-
-        Will force the ReadOnly setting in VolumeMounts. Default false.  # noqa: E501
-
-        :param read_only: The read_only of this V1PersistentVolumeClaimVolumeSource.  # noqa: E501
-        :type: bool
-        """
-
-        self._read_only = read_only
 
     @property
     def claim_name(self):
@@ -98,6 +75,29 @@ class V1PersistentVolumeClaimVolumeSource(object):
             raise ValueError("Invalid value for `claim_name`, must not be `None`")  # noqa: E501
 
         self._claim_name = claim_name
+
+    @property
+    def read_only(self):
+        """Gets the read_only of this V1PersistentVolumeClaimVolumeSource.  # noqa: E501
+
+        Will force the ReadOnly setting in VolumeMounts. Default false.  # noqa: E501
+
+        :return: The read_only of this V1PersistentVolumeClaimVolumeSource.  # noqa: E501
+        :rtype: bool
+        """
+        return self._read_only
+
+    @read_only.setter
+    def read_only(self, read_only):
+        """Sets the read_only of this V1PersistentVolumeClaimVolumeSource.
+
+        Will force the ReadOnly setting in VolumeMounts. Default false.  # noqa: E501
+
+        :param read_only: The read_only of this V1PersistentVolumeClaimVolumeSource.  # noqa: E501
+        :type: bool
+        """
+
+        self._read_only = read_only
 
     def to_dict(self):
         """Returns the model properties as a dict"""

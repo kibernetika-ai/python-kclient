@@ -31,115 +31,55 @@ class InferenceRunServingRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'global_cluster_id': 'str',
-        'shared_cluster_name': 'str',
-        'name': 'str',
-        'workspace_name': 'str',
-        'cluster_name': 'str',
-        'project_name': 'str',
         'cluster_id': 'str',
-        'cluster_type': 'str',
-        'environment': 'str',
-        'project_display_name': 'str',
+        'name': 'str',
         'values': 'object',
-        'global_cluster_name': 'str'
+        'workspace_name': 'str'
     }
 
     attribute_map = {
-        'global_cluster_id': 'GlobalClusterID',
-        'shared_cluster_name': 'SharedClusterName',
-        'name': 'Name',
-        'workspace_name': 'WorkspaceName',
-        'cluster_name': 'ClusterName',
-        'project_name': 'ProjectName',
         'cluster_id': 'ClusterID',
-        'cluster_type': 'ClusterType',
-        'environment': 'Environment',
-        'project_display_name': 'ProjectDisplayName',
+        'name': 'Name',
         'values': 'Values',
-        'global_cluster_name': 'GlobalClusterName'
+        'workspace_name': 'WorkspaceName'
     }
 
-    def __init__(self, global_cluster_id=None, shared_cluster_name=None, name=None, workspace_name=None, cluster_name=None, project_name=None, cluster_id=None, cluster_type=None, environment=None, project_display_name=None, values=None, global_cluster_name=None):  # noqa: E501
+    def __init__(self, cluster_id=None, name=None, values=None, workspace_name=None):  # noqa: E501
         """InferenceRunServingRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._global_cluster_id = None
-        self._shared_cluster_name = None
-        self._name = None
-        self._workspace_name = None
-        self._cluster_name = None
-        self._project_name = None
         self._cluster_id = None
-        self._cluster_type = None
-        self._environment = None
-        self._project_display_name = None
+        self._name = None
         self._values = None
-        self._global_cluster_name = None
+        self._workspace_name = None
         self.discriminator = None
 
-        if global_cluster_id is not None:
-            self.global_cluster_id = global_cluster_id
-        if shared_cluster_name is not None:
-            self.shared_cluster_name = shared_cluster_name
+        self.cluster_id = cluster_id
         self.name = name
-        self.workspace_name = workspace_name
-        if cluster_name is not None:
-            self.cluster_name = cluster_name
-        if project_name is not None:
-            self.project_name = project_name
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
-        if cluster_type is not None:
-            self.cluster_type = cluster_type
-        if environment is not None:
-            self.environment = environment
-        if project_display_name is not None:
-            self.project_display_name = project_display_name
         self.values = values
-        if global_cluster_name is not None:
-            self.global_cluster_name = global_cluster_name
+        self.workspace_name = workspace_name
 
     @property
-    def global_cluster_id(self):
-        """Gets the global_cluster_id of this InferenceRunServingRequest.  # noqa: E501
+    def cluster_id(self):
+        """Gets the cluster_id of this InferenceRunServingRequest.  # noqa: E501
 
 
-        :return: The global_cluster_id of this InferenceRunServingRequest.  # noqa: E501
+        :return: The cluster_id of this InferenceRunServingRequest.  # noqa: E501
         :rtype: str
         """
-        return self._global_cluster_id
+        return self._cluster_id
 
-    @global_cluster_id.setter
-    def global_cluster_id(self, global_cluster_id):
-        """Sets the global_cluster_id of this InferenceRunServingRequest.
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this InferenceRunServingRequest.
 
 
-        :param global_cluster_id: The global_cluster_id of this InferenceRunServingRequest.  # noqa: E501
+        :param cluster_id: The cluster_id of this InferenceRunServingRequest.  # noqa: E501
         :type: str
         """
+        if cluster_id is None:
+            raise ValueError("Invalid value for `cluster_id`, must not be `None`")  # noqa: E501
 
-        self._global_cluster_id = global_cluster_id
-
-    @property
-    def shared_cluster_name(self):
-        """Gets the shared_cluster_name of this InferenceRunServingRequest.  # noqa: E501
-
-
-        :return: The shared_cluster_name of this InferenceRunServingRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._shared_cluster_name
-
-    @shared_cluster_name.setter
-    def shared_cluster_name(self, shared_cluster_name):
-        """Sets the shared_cluster_name of this InferenceRunServingRequest.
-
-
-        :param shared_cluster_name: The shared_cluster_name of this InferenceRunServingRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._shared_cluster_name = shared_cluster_name
+        self._cluster_id = cluster_id
 
     @property
     def name(self):
@@ -165,155 +105,6 @@ class InferenceRunServingRequest(object):
         self._name = name
 
     @property
-    def workspace_name(self):
-        """Gets the workspace_name of this InferenceRunServingRequest.  # noqa: E501
-
-
-        :return: The workspace_name of this InferenceRunServingRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._workspace_name
-
-    @workspace_name.setter
-    def workspace_name(self, workspace_name):
-        """Sets the workspace_name of this InferenceRunServingRequest.
-
-
-        :param workspace_name: The workspace_name of this InferenceRunServingRequest.  # noqa: E501
-        :type: str
-        """
-        if workspace_name is None:
-            raise ValueError("Invalid value for `workspace_name`, must not be `None`")  # noqa: E501
-
-        self._workspace_name = workspace_name
-
-    @property
-    def cluster_name(self):
-        """Gets the cluster_name of this InferenceRunServingRequest.  # noqa: E501
-
-
-        :return: The cluster_name of this InferenceRunServingRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_name
-
-    @cluster_name.setter
-    def cluster_name(self, cluster_name):
-        """Sets the cluster_name of this InferenceRunServingRequest.
-
-
-        :param cluster_name: The cluster_name of this InferenceRunServingRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_name = cluster_name
-
-    @property
-    def project_name(self):
-        """Gets the project_name of this InferenceRunServingRequest.  # noqa: E501
-
-
-        :return: The project_name of this InferenceRunServingRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._project_name
-
-    @project_name.setter
-    def project_name(self, project_name):
-        """Sets the project_name of this InferenceRunServingRequest.
-
-
-        :param project_name: The project_name of this InferenceRunServingRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._project_name = project_name
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this InferenceRunServingRequest.  # noqa: E501
-
-
-        :return: The cluster_id of this InferenceRunServingRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_id
-
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this InferenceRunServingRequest.
-
-
-        :param cluster_id: The cluster_id of this InferenceRunServingRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_id = cluster_id
-
-    @property
-    def cluster_type(self):
-        """Gets the cluster_type of this InferenceRunServingRequest.  # noqa: E501
-
-
-        :return: The cluster_type of this InferenceRunServingRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_type
-
-    @cluster_type.setter
-    def cluster_type(self, cluster_type):
-        """Sets the cluster_type of this InferenceRunServingRequest.
-
-
-        :param cluster_type: The cluster_type of this InferenceRunServingRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_type = cluster_type
-
-    @property
-    def environment(self):
-        """Gets the environment of this InferenceRunServingRequest.  # noqa: E501
-
-
-        :return: The environment of this InferenceRunServingRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._environment
-
-    @environment.setter
-    def environment(self, environment):
-        """Sets the environment of this InferenceRunServingRequest.
-
-
-        :param environment: The environment of this InferenceRunServingRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._environment = environment
-
-    @property
-    def project_display_name(self):
-        """Gets the project_display_name of this InferenceRunServingRequest.  # noqa: E501
-
-
-        :return: The project_display_name of this InferenceRunServingRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._project_display_name
-
-    @project_display_name.setter
-    def project_display_name(self, project_display_name):
-        """Sets the project_display_name of this InferenceRunServingRequest.
-
-
-        :param project_display_name: The project_display_name of this InferenceRunServingRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._project_display_name = project_display_name
-
-    @property
     def values(self):
         """Gets the values of this InferenceRunServingRequest.  # noqa: E501
 
@@ -337,25 +128,27 @@ class InferenceRunServingRequest(object):
         self._values = values
 
     @property
-    def global_cluster_name(self):
-        """Gets the global_cluster_name of this InferenceRunServingRequest.  # noqa: E501
+    def workspace_name(self):
+        """Gets the workspace_name of this InferenceRunServingRequest.  # noqa: E501
 
 
-        :return: The global_cluster_name of this InferenceRunServingRequest.  # noqa: E501
+        :return: The workspace_name of this InferenceRunServingRequest.  # noqa: E501
         :rtype: str
         """
-        return self._global_cluster_name
+        return self._workspace_name
 
-    @global_cluster_name.setter
-    def global_cluster_name(self, global_cluster_name):
-        """Sets the global_cluster_name of this InferenceRunServingRequest.
+    @workspace_name.setter
+    def workspace_name(self, workspace_name):
+        """Sets the workspace_name of this InferenceRunServingRequest.
 
 
-        :param global_cluster_name: The global_cluster_name of this InferenceRunServingRequest.  # noqa: E501
+        :param workspace_name: The workspace_name of this InferenceRunServingRequest.  # noqa: E501
         :type: str
         """
+        if workspace_name is None:
+            raise ValueError("Invalid value for `workspace_name`, must not be `None`")  # noqa: E501
 
-        self._global_cluster_name = global_cluster_name
+        self._workspace_name = workspace_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

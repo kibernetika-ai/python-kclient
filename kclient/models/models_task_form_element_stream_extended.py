@@ -32,45 +32,45 @@ class ModelsTaskFormElementStreamExtended(object):
     """
     swagger_types = {
         'description': 'str',
-        'params': 'dict(str, str)',
+        'input': 'str',
         'key': 'str',
         'output': 'str',
-        'stream_url': 'str',
-        'input': 'str'
+        'params': 'dict(str, str)',
+        'stream_url': 'str'
     }
 
     attribute_map = {
         'description': 'description',
-        'params': 'params',
+        'input': 'input',
         'key': 'key',
         'output': 'output',
-        'stream_url': 'stream_url',
-        'input': 'input'
+        'params': 'params',
+        'stream_url': 'stream_url'
     }
 
-    def __init__(self, description=None, params=None, key=None, output=None, stream_url=None, input=None):  # noqa: E501
+    def __init__(self, description=None, input=None, key=None, output=None, params=None, stream_url=None):  # noqa: E501
         """ModelsTaskFormElementStreamExtended - a model defined in Swagger"""  # noqa: E501
 
         self._description = None
-        self._params = None
+        self._input = None
         self._key = None
         self._output = None
+        self._params = None
         self._stream_url = None
-        self._input = None
         self.discriminator = None
 
         if description is not None:
             self.description = description
-        if params is not None:
-            self.params = params
+        if input is not None:
+            self.input = input
         if key is not None:
             self.key = key
         if output is not None:
             self.output = output
+        if params is not None:
+            self.params = params
         if stream_url is not None:
             self.stream_url = stream_url
-        if input is not None:
-            self.input = input
 
     @property
     def description(self):
@@ -94,25 +94,25 @@ class ModelsTaskFormElementStreamExtended(object):
         self._description = description
 
     @property
-    def params(self):
-        """Gets the params of this ModelsTaskFormElementStreamExtended.  # noqa: E501
+    def input(self):
+        """Gets the input of this ModelsTaskFormElementStreamExtended.  # noqa: E501
 
 
-        :return: The params of this ModelsTaskFormElementStreamExtended.  # noqa: E501
-        :rtype: dict(str, str)
+        :return: The input of this ModelsTaskFormElementStreamExtended.  # noqa: E501
+        :rtype: str
         """
-        return self._params
+        return self._input
 
-    @params.setter
-    def params(self, params):
-        """Sets the params of this ModelsTaskFormElementStreamExtended.
+    @input.setter
+    def input(self, input):
+        """Sets the input of this ModelsTaskFormElementStreamExtended.
 
 
-        :param params: The params of this ModelsTaskFormElementStreamExtended.  # noqa: E501
-        :type: dict(str, str)
+        :param input: The input of this ModelsTaskFormElementStreamExtended.  # noqa: E501
+        :type: str
         """
 
-        self._params = params
+        self._input = input
 
     @property
     def key(self):
@@ -157,6 +157,27 @@ class ModelsTaskFormElementStreamExtended(object):
         self._output = output
 
     @property
+    def params(self):
+        """Gets the params of this ModelsTaskFormElementStreamExtended.  # noqa: E501
+
+
+        :return: The params of this ModelsTaskFormElementStreamExtended.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._params
+
+    @params.setter
+    def params(self, params):
+        """Sets the params of this ModelsTaskFormElementStreamExtended.
+
+
+        :param params: The params of this ModelsTaskFormElementStreamExtended.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._params = params
+
+    @property
     def stream_url(self):
         """Gets the stream_url of this ModelsTaskFormElementStreamExtended.  # noqa: E501
 
@@ -176,27 +197,6 @@ class ModelsTaskFormElementStreamExtended(object):
         """
 
         self._stream_url = stream_url
-
-    @property
-    def input(self):
-        """Gets the input of this ModelsTaskFormElementStreamExtended.  # noqa: E501
-
-
-        :return: The input of this ModelsTaskFormElementStreamExtended.  # noqa: E501
-        :rtype: str
-        """
-        return self._input
-
-    @input.setter
-    def input(self, input):
-        """Sets the input of this ModelsTaskFormElementStreamExtended.
-
-
-        :param input: The input of this ModelsTaskFormElementStreamExtended.  # noqa: E501
-        :type: str
-        """
-
-        self._input = input
 
     def to_dict(self):
         """Returns the model properties as a dict"""

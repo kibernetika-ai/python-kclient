@@ -31,77 +31,35 @@ class MlappEnv(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'secret_key': 'str',
-        'value_from_secret': 'str',
         'name': 'str',
-        'value': 'str'
+        'secret_key': 'str',
+        'value': 'str',
+        'value_from_secret': 'str'
     }
 
     attribute_map = {
-        'secret_key': 'secretKey',
-        'value_from_secret': 'valueFromSecret',
         'name': 'name',
-        'value': 'value'
+        'secret_key': 'secretKey',
+        'value': 'value',
+        'value_from_secret': 'valueFromSecret'
     }
 
-    def __init__(self, secret_key=None, value_from_secret=None, name=None, value=None):  # noqa: E501
+    def __init__(self, name=None, secret_key=None, value=None, value_from_secret=None):  # noqa: E501
         """MlappEnv - a model defined in Swagger"""  # noqa: E501
 
-        self._secret_key = None
-        self._value_from_secret = None
         self._name = None
+        self._secret_key = None
         self._value = None
+        self._value_from_secret = None
         self.discriminator = None
 
+        self.name = name
         if secret_key is not None:
             self.secret_key = secret_key
-        if value_from_secret is not None:
-            self.value_from_secret = value_from_secret
-        self.name = name
         if value is not None:
             self.value = value
-
-    @property
-    def secret_key(self):
-        """Gets the secret_key of this MlappEnv.  # noqa: E501
-
-
-        :return: The secret_key of this MlappEnv.  # noqa: E501
-        :rtype: str
-        """
-        return self._secret_key
-
-    @secret_key.setter
-    def secret_key(self, secret_key):
-        """Sets the secret_key of this MlappEnv.
-
-
-        :param secret_key: The secret_key of this MlappEnv.  # noqa: E501
-        :type: str
-        """
-
-        self._secret_key = secret_key
-
-    @property
-    def value_from_secret(self):
-        """Gets the value_from_secret of this MlappEnv.  # noqa: E501
-
-
-        :return: The value_from_secret of this MlappEnv.  # noqa: E501
-        :rtype: str
-        """
-        return self._value_from_secret
-
-    @value_from_secret.setter
-    def value_from_secret(self, value_from_secret):
-        """Sets the value_from_secret of this MlappEnv.
-
-
-        :param value_from_secret: The value_from_secret of this MlappEnv.  # noqa: E501
-        :type: str
-        """
-
-        self._value_from_secret = value_from_secret
+        if value_from_secret is not None:
+            self.value_from_secret = value_from_secret
 
     @property
     def name(self):
@@ -127,6 +85,27 @@ class MlappEnv(object):
         self._name = name
 
     @property
+    def secret_key(self):
+        """Gets the secret_key of this MlappEnv.  # noqa: E501
+
+
+        :return: The secret_key of this MlappEnv.  # noqa: E501
+        :rtype: str
+        """
+        return self._secret_key
+
+    @secret_key.setter
+    def secret_key(self, secret_key):
+        """Sets the secret_key of this MlappEnv.
+
+
+        :param secret_key: The secret_key of this MlappEnv.  # noqa: E501
+        :type: str
+        """
+
+        self._secret_key = secret_key
+
+    @property
     def value(self):
         """Gets the value of this MlappEnv.  # noqa: E501
 
@@ -146,6 +125,27 @@ class MlappEnv(object):
         """
 
         self._value = value
+
+    @property
+    def value_from_secret(self):
+        """Gets the value_from_secret of this MlappEnv.  # noqa: E501
+
+
+        :return: The value_from_secret of this MlappEnv.  # noqa: E501
+        :rtype: str
+        """
+        return self._value_from_secret
+
+    @value_from_secret.setter
+    def value_from_secret(self, value_from_secret):
+        """Sets the value_from_secret of this MlappEnv.
+
+
+        :param value_from_secret: The value_from_secret of this MlappEnv.  # noqa: E501
+        :type: str
+        """
+
+        self._value_from_secret = value_from_secret
 
     def to_dict(self):
         """Returns the model properties as a dict"""

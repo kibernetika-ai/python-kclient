@@ -31,56 +31,56 @@ class MlappDatasetSource(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'version': 'str',
+        'dataset': 'str',
         'server_url': 'str',
-        'workspace': 'str',
-        'dataset': 'str'
+        'version': 'str',
+        'workspace': 'str'
     }
 
     attribute_map = {
-        'version': 'version',
+        'dataset': 'dataset',
         'server_url': 'serverURL',
-        'workspace': 'workspace',
-        'dataset': 'dataset'
+        'version': 'version',
+        'workspace': 'workspace'
     }
 
-    def __init__(self, version=None, server_url=None, workspace=None, dataset=None):  # noqa: E501
+    def __init__(self, dataset=None, server_url=None, version=None, workspace=None):  # noqa: E501
         """MlappDatasetSource - a model defined in Swagger"""  # noqa: E501
 
-        self._version = None
-        self._server_url = None
-        self._workspace = None
         self._dataset = None
+        self._server_url = None
+        self._version = None
+        self._workspace = None
         self.discriminator = None
 
-        if version is not None:
-            self.version = version
-        if server_url is not None:
-            self.server_url = server_url
-        self.workspace = workspace
         if dataset is not None:
             self.dataset = dataset
+        if server_url is not None:
+            self.server_url = server_url
+        if version is not None:
+            self.version = version
+        self.workspace = workspace
 
     @property
-    def version(self):
-        """Gets the version of this MlappDatasetSource.  # noqa: E501
+    def dataset(self):
+        """Gets the dataset of this MlappDatasetSource.  # noqa: E501
 
 
-        :return: The version of this MlappDatasetSource.  # noqa: E501
+        :return: The dataset of this MlappDatasetSource.  # noqa: E501
         :rtype: str
         """
-        return self._version
+        return self._dataset
 
-    @version.setter
-    def version(self, version):
-        """Sets the version of this MlappDatasetSource.
+    @dataset.setter
+    def dataset(self, dataset):
+        """Sets the dataset of this MlappDatasetSource.
 
 
-        :param version: The version of this MlappDatasetSource.  # noqa: E501
+        :param dataset: The dataset of this MlappDatasetSource.  # noqa: E501
         :type: str
         """
 
-        self._version = version
+        self._dataset = dataset
 
     @property
     def server_url(self):
@@ -104,6 +104,27 @@ class MlappDatasetSource(object):
         self._server_url = server_url
 
     @property
+    def version(self):
+        """Gets the version of this MlappDatasetSource.  # noqa: E501
+
+
+        :return: The version of this MlappDatasetSource.  # noqa: E501
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this MlappDatasetSource.
+
+
+        :param version: The version of this MlappDatasetSource.  # noqa: E501
+        :type: str
+        """
+
+        self._version = version
+
+    @property
     def workspace(self):
         """Gets the workspace of this MlappDatasetSource.  # noqa: E501
 
@@ -125,27 +146,6 @@ class MlappDatasetSource(object):
             raise ValueError("Invalid value for `workspace`, must not be `None`")  # noqa: E501
 
         self._workspace = workspace
-
-    @property
-    def dataset(self):
-        """Gets the dataset of this MlappDatasetSource.  # noqa: E501
-
-
-        :return: The dataset of this MlappDatasetSource.  # noqa: E501
-        :rtype: str
-        """
-        return self._dataset
-
-    @dataset.setter
-    def dataset(self, dataset):
-        """Sets the dataset of this MlappDatasetSource.
-
-
-        :param dataset: The dataset of this MlappDatasetSource.  # noqa: E501
-        :type: str
-        """
-
-        self._dataset = dataset
 
     def to_dict(self):
         """Returns the model properties as a dict"""

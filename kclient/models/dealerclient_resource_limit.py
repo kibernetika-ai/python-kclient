@@ -31,98 +31,77 @@ class DealerclientResourceLimit(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'replicas': 'int',
-        'execution_time': 'int',
+        'cpu': 'str',
         'cpu_mi': 'int',
-        'parallel_runs': 'int',
-        'memory_mb': 'int',
-        'memory': 'str',
+        'execution_time': 'int',
         'gpu': 'int',
-        'cpu': 'str'
+        'memory': 'str',
+        'memory_mb': 'int',
+        'parallel_runs': 'int',
+        'replicas': 'int'
     }
 
     attribute_map = {
-        'replicas': 'replicas',
-        'execution_time': 'execution_time',
+        'cpu': 'cpu',
         'cpu_mi': 'cpu_mi',
-        'parallel_runs': 'parallel_runs',
-        'memory_mb': 'memory_mb',
-        'memory': 'memory',
+        'execution_time': 'execution_time',
         'gpu': 'gpu',
-        'cpu': 'cpu'
+        'memory': 'memory',
+        'memory_mb': 'memory_mb',
+        'parallel_runs': 'parallel_runs',
+        'replicas': 'replicas'
     }
 
-    def __init__(self, replicas=None, execution_time=None, cpu_mi=None, parallel_runs=None, memory_mb=None, memory=None, gpu=None, cpu=None):  # noqa: E501
+    def __init__(self, cpu=None, cpu_mi=None, execution_time=None, gpu=None, memory=None, memory_mb=None, parallel_runs=None, replicas=None):  # noqa: E501
         """DealerclientResourceLimit - a model defined in Swagger"""  # noqa: E501
 
-        self._replicas = None
-        self._execution_time = None
-        self._cpu_mi = None
-        self._parallel_runs = None
-        self._memory_mb = None
-        self._memory = None
-        self._gpu = None
         self._cpu = None
+        self._cpu_mi = None
+        self._execution_time = None
+        self._gpu = None
+        self._memory = None
+        self._memory_mb = None
+        self._parallel_runs = None
+        self._replicas = None
         self.discriminator = None
 
-        if replicas is not None:
-            self.replicas = replicas
-        if execution_time is not None:
-            self.execution_time = execution_time
-        if cpu_mi is not None:
-            self.cpu_mi = cpu_mi
-        if parallel_runs is not None:
-            self.parallel_runs = parallel_runs
-        if memory_mb is not None:
-            self.memory_mb = memory_mb
-        if memory is not None:
-            self.memory = memory
-        if gpu is not None:
-            self.gpu = gpu
         if cpu is not None:
             self.cpu = cpu
+        if cpu_mi is not None:
+            self.cpu_mi = cpu_mi
+        if execution_time is not None:
+            self.execution_time = execution_time
+        if gpu is not None:
+            self.gpu = gpu
+        if memory is not None:
+            self.memory = memory
+        if memory_mb is not None:
+            self.memory_mb = memory_mb
+        if parallel_runs is not None:
+            self.parallel_runs = parallel_runs
+        if replicas is not None:
+            self.replicas = replicas
 
     @property
-    def replicas(self):
-        """Gets the replicas of this DealerclientResourceLimit.  # noqa: E501
+    def cpu(self):
+        """Gets the cpu of this DealerclientResourceLimit.  # noqa: E501
 
 
-        :return: The replicas of this DealerclientResourceLimit.  # noqa: E501
-        :rtype: int
+        :return: The cpu of this DealerclientResourceLimit.  # noqa: E501
+        :rtype: str
         """
-        return self._replicas
+        return self._cpu
 
-    @replicas.setter
-    def replicas(self, replicas):
-        """Sets the replicas of this DealerclientResourceLimit.
-
-
-        :param replicas: The replicas of this DealerclientResourceLimit.  # noqa: E501
-        :type: int
-        """
-
-        self._replicas = replicas
-
-    @property
-    def execution_time(self):
-        """Gets the execution_time of this DealerclientResourceLimit.  # noqa: E501
+    @cpu.setter
+    def cpu(self, cpu):
+        """Sets the cpu of this DealerclientResourceLimit.
 
 
-        :return: The execution_time of this DealerclientResourceLimit.  # noqa: E501
-        :rtype: int
-        """
-        return self._execution_time
-
-    @execution_time.setter
-    def execution_time(self, execution_time):
-        """Sets the execution_time of this DealerclientResourceLimit.
-
-
-        :param execution_time: The execution_time of this DealerclientResourceLimit.  # noqa: E501
-        :type: int
+        :param cpu: The cpu of this DealerclientResourceLimit.  # noqa: E501
+        :type: str
         """
 
-        self._execution_time = execution_time
+        self._cpu = cpu
 
     @property
     def cpu_mi(self):
@@ -146,67 +125,25 @@ class DealerclientResourceLimit(object):
         self._cpu_mi = cpu_mi
 
     @property
-    def parallel_runs(self):
-        """Gets the parallel_runs of this DealerclientResourceLimit.  # noqa: E501
+    def execution_time(self):
+        """Gets the execution_time of this DealerclientResourceLimit.  # noqa: E501
 
 
-        :return: The parallel_runs of this DealerclientResourceLimit.  # noqa: E501
+        :return: The execution_time of this DealerclientResourceLimit.  # noqa: E501
         :rtype: int
         """
-        return self._parallel_runs
+        return self._execution_time
 
-    @parallel_runs.setter
-    def parallel_runs(self, parallel_runs):
-        """Sets the parallel_runs of this DealerclientResourceLimit.
+    @execution_time.setter
+    def execution_time(self, execution_time):
+        """Sets the execution_time of this DealerclientResourceLimit.
 
 
-        :param parallel_runs: The parallel_runs of this DealerclientResourceLimit.  # noqa: E501
+        :param execution_time: The execution_time of this DealerclientResourceLimit.  # noqa: E501
         :type: int
         """
 
-        self._parallel_runs = parallel_runs
-
-    @property
-    def memory_mb(self):
-        """Gets the memory_mb of this DealerclientResourceLimit.  # noqa: E501
-
-
-        :return: The memory_mb of this DealerclientResourceLimit.  # noqa: E501
-        :rtype: int
-        """
-        return self._memory_mb
-
-    @memory_mb.setter
-    def memory_mb(self, memory_mb):
-        """Sets the memory_mb of this DealerclientResourceLimit.
-
-
-        :param memory_mb: The memory_mb of this DealerclientResourceLimit.  # noqa: E501
-        :type: int
-        """
-
-        self._memory_mb = memory_mb
-
-    @property
-    def memory(self):
-        """Gets the memory of this DealerclientResourceLimit.  # noqa: E501
-
-
-        :return: The memory of this DealerclientResourceLimit.  # noqa: E501
-        :rtype: str
-        """
-        return self._memory
-
-    @memory.setter
-    def memory(self, memory):
-        """Sets the memory of this DealerclientResourceLimit.
-
-
-        :param memory: The memory of this DealerclientResourceLimit.  # noqa: E501
-        :type: str
-        """
-
-        self._memory = memory
+        self._execution_time = execution_time
 
     @property
     def gpu(self):
@@ -230,25 +167,88 @@ class DealerclientResourceLimit(object):
         self._gpu = gpu
 
     @property
-    def cpu(self):
-        """Gets the cpu of this DealerclientResourceLimit.  # noqa: E501
+    def memory(self):
+        """Gets the memory of this DealerclientResourceLimit.  # noqa: E501
 
 
-        :return: The cpu of this DealerclientResourceLimit.  # noqa: E501
+        :return: The memory of this DealerclientResourceLimit.  # noqa: E501
         :rtype: str
         """
-        return self._cpu
+        return self._memory
 
-    @cpu.setter
-    def cpu(self, cpu):
-        """Sets the cpu of this DealerclientResourceLimit.
+    @memory.setter
+    def memory(self, memory):
+        """Sets the memory of this DealerclientResourceLimit.
 
 
-        :param cpu: The cpu of this DealerclientResourceLimit.  # noqa: E501
+        :param memory: The memory of this DealerclientResourceLimit.  # noqa: E501
         :type: str
         """
 
-        self._cpu = cpu
+        self._memory = memory
+
+    @property
+    def memory_mb(self):
+        """Gets the memory_mb of this DealerclientResourceLimit.  # noqa: E501
+
+
+        :return: The memory_mb of this DealerclientResourceLimit.  # noqa: E501
+        :rtype: int
+        """
+        return self._memory_mb
+
+    @memory_mb.setter
+    def memory_mb(self, memory_mb):
+        """Sets the memory_mb of this DealerclientResourceLimit.
+
+
+        :param memory_mb: The memory_mb of this DealerclientResourceLimit.  # noqa: E501
+        :type: int
+        """
+
+        self._memory_mb = memory_mb
+
+    @property
+    def parallel_runs(self):
+        """Gets the parallel_runs of this DealerclientResourceLimit.  # noqa: E501
+
+
+        :return: The parallel_runs of this DealerclientResourceLimit.  # noqa: E501
+        :rtype: int
+        """
+        return self._parallel_runs
+
+    @parallel_runs.setter
+    def parallel_runs(self, parallel_runs):
+        """Sets the parallel_runs of this DealerclientResourceLimit.
+
+
+        :param parallel_runs: The parallel_runs of this DealerclientResourceLimit.  # noqa: E501
+        :type: int
+        """
+
+        self._parallel_runs = parallel_runs
+
+    @property
+    def replicas(self):
+        """Gets the replicas of this DealerclientResourceLimit.  # noqa: E501
+
+
+        :return: The replicas of this DealerclientResourceLimit.  # noqa: E501
+        :rtype: int
+        """
+        return self._replicas
+
+    @replicas.setter
+    def replicas(self, replicas):
+        """Sets the replicas of this DealerclientResourceLimit.
+
+
+        :param replicas: The replicas of this DealerclientResourceLimit.  # noqa: E501
+        :type: int
+        """
+
+        self._replicas = replicas
 
     def to_dict(self):
         """Returns the model properties as a dict"""
