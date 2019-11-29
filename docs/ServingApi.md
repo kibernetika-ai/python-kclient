@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serving_tf_proxy_model**
-> str serving_tf_proxy_model(model, body, workspace, serving, port)
+> ModelsArbitrary serving_tf_proxy_model(model, body, workspace, serving, port)
 
 TF proxy to serving (model)
 
@@ -257,7 +257,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
 model = 'model_example' # str | Serving model
-body = 'body_example' # str | 
+body = kclient.ModelsArbitrary() # ModelsArbitrary | 
 workspace = 'workspace_example' # str | Workspace's name
 serving = 'serving_example' # str | Serving's Name or ID
 port = 'port_example' # str | Serving port
@@ -275,14 +275,14 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **model** | **str**| Serving model | 
- **body** | [**str**](str.md)|  | 
+ **body** | [**ModelsArbitrary**](ModelsArbitrary.md)|  | 
  **workspace** | **str**| Workspace&#39;s name | 
  **serving** | **str**| Serving&#39;s Name or ID | 
  **port** | **str**| Serving port | 
 
 ### Return type
 
-**str**
+[**ModelsArbitrary**](ModelsArbitrary.md)
 
 ### Authorization
 
@@ -290,13 +290,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data, application/json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serving_tf_proxy_model_signature**
-> str serving_tf_proxy_model_signature(model, signature, body, workspace, serving, port)
+> ModelsArbitrary serving_tf_proxy_model_signature(model, signature, body, workspace, serving, port)
 
 TF proxy to serving (model, signature)
 
@@ -318,7 +318,7 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
 model = 'model_example' # str | Serving model
 signature = 'signature_example' # str | Serving signature
-body = 'body_example' # str | 
+body = kclient.ModelsArbitrary() # ModelsArbitrary | 
 workspace = 'workspace_example' # str | Workspace's name
 serving = 'serving_example' # str | Serving's Name or ID
 port = 'port_example' # str | Serving port
@@ -337,14 +337,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **model** | **str**| Serving model | 
  **signature** | **str**| Serving signature | 
- **body** | [**str**](str.md)|  | 
+ **body** | [**ModelsArbitrary**](ModelsArbitrary.md)|  | 
  **workspace** | **str**| Workspace&#39;s name | 
  **serving** | **str**| Serving&#39;s Name or ID | 
  **port** | **str**| Serving port | 
 
 ### Return type
 
-**str**
+[**ModelsArbitrary**](ModelsArbitrary.md)
 
 ### Authorization
 
@@ -352,13 +352,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data, application/json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **serving_tf_proxy_model_signature_version**
-> str serving_tf_proxy_model_signature_version(model, signature, version, body, workspace, serving, port)
+> ModelsArbitrary serving_tf_proxy_model_signature_version(model, signature, version, body, workspace, serving, port)
 
 TF proxy to serving (model, signature, version)
 
@@ -381,7 +381,7 @@ api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
 model = 'model_example' # str | Serving model
 signature = 'signature_example' # str | Serving signature
 version = 'version_example' # str | Serving version
-body = 'body_example' # str | 
+body = kclient.ModelsArbitrary() # ModelsArbitrary | 
 workspace = 'workspace_example' # str | Workspace's name
 serving = 'serving_example' # str | Serving's Name or ID
 port = 'port_example' # str | Serving port
@@ -401,14 +401,14 @@ Name | Type | Description  | Notes
  **model** | **str**| Serving model | 
  **signature** | **str**| Serving signature | 
  **version** | **str**| Serving version | 
- **body** | [**str**](str.md)|  | 
+ **body** | [**ModelsArbitrary**](ModelsArbitrary.md)|  | 
  **workspace** | **str**| Workspace&#39;s name | 
  **serving** | **str**| Serving&#39;s Name or ID | 
  **port** | **str**| Serving port | 
 
 ### Return type
 
-**str**
+[**ModelsArbitrary**](ModelsArbitrary.md)
 
 ### Authorization
 
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: multipart/form-data, application/json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

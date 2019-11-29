@@ -116,6 +116,7 @@ Class | Method | HTTP request | Description
  - [MlappUniversalServing](docs/MlappUniversalServing.md)
  - [MlappVolume](docs/MlappVolume.md)
  - [MlappVolumeMount](docs/MlappVolumeMount.md)
+ - [ModelsArbitrary](docs/ModelsArbitrary.md)
  - [ModelsInferenceVersion](docs/ModelsInferenceVersion.md)
  - [ModelsServing](docs/ModelsServing.md)
  - [ModelsTaskFormElement](docs/ModelsTaskFormElement.md)
