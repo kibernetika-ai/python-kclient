@@ -4,7 +4,7 @@ import os
 
 def make(data: dict = None, files: dict = None) -> dict:
 
-    inputs = {}
+    req = {}
 
     if data is not None:
         for k in data:
@@ -12,7 +12,7 @@ def make(data: dict = None, files: dict = None) -> dict:
                 val = data[k]
             else:
                 raise ValueError(f'unsupported data type {type(data[k])}')
-            inputs[k] = val
+            req[k] = val
 
     if files is not None:
         for k in files:
@@ -20,6 +20,6 @@ def make(data: dict = None, files: dict = None) -> dict:
                 raise ValueError(f'file {k} is absent')
             with open(files[k], "rb") as image_file:
                 data = base64.b64encode(image_file.read()).decode()
-            inputs[k] = data
+            req[k] = data
 
-    return inputs
+    return req
