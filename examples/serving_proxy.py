@@ -3,24 +3,24 @@ from datetime import datetime
 from examples import config
 import kclient
 from kclient.rest import ApiException
-from kclient.utils import tfrequest
+from kclient.utils import request
 
 client = kclient.ApiClient(config.get())
 
 serving_api = kclient.api.serving_api.ServingApi(client)
 
-serving_workspace_name, serving_name, port, model = 'expo-recall', 'demo-0-0-1', '9000', 'any'
+serving_workspace_name, serving_name = 'expo-recall', 'demo-0-0-1'
 
 try:
     print(f'Trying to send data to serving {serving_workspace_name}/{serving_name}...')
-    data = tfrequest.make(data={
+    data = request.make(data={
         'test_text': 'current datetime: ' + str(datetime.now()),
         'test_int': 42,
         'test_float': 3.1415926,
     }, files={
         'test_image': 'clover.png',
     })
-    resp = serving_api.serving_tf_proxy_model(model, data, serving_workspace_name, serving_name, port)
+    resp = serving_api.serving_proxy(data, serving_workspace_name, serving_name)
     print(f'Response type: {type(resp)}')
     print('Response: ', resp)
 except ApiException as e:

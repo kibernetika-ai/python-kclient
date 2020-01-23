@@ -8,9 +8,7 @@ Method | HTTP request | Description
 [**serving_disable**](ServingApi.md#serving_disable) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/disable | Disable serving
 [**serving_enable**](ServingApi.md#serving_enable) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/enable | Enable serving
 [**serving_info**](ServingApi.md#serving_info) | **GET** /api/v0.2/workspace/{workspace}/serving/{serving} | Return serving&#39;s info
-[**serving_tf_proxy_model**](ServingApi.md#serving_tf_proxy_model) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/tfproxy/{port}/{model} | TF proxy to serving (model)
-[**serving_tf_proxy_model_signature**](ServingApi.md#serving_tf_proxy_model_signature) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/tfproxy/{port}/{model}/{signature} | TF proxy to serving (model, signature)
-[**serving_tf_proxy_model_signature_version**](ServingApi.md#serving_tf_proxy_model_signature_version) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/tfproxy/{port}/{model}/{signature}/{version} | TF proxy to serving (model, signature, version)
+[**serving_proxy**](ServingApi.md#serving_proxy) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/proxy | Proxy to serving (json data)
 [**update_serving**](ServingApi.md#update_serving) | **PUT** /api/v0.2/workspace/{workspace}/serving/{serving} | Update serving
 
 
@@ -235,70 +233,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **serving_tf_proxy_model**
-> ModelsArbitrary serving_tf_proxy_model(model, body, workspace, serving, port)
+# **serving_proxy**
+> ModelsArbitrary serving_proxy(body, workspace, serving)
 
-TF proxy to serving (model)
-
-### Example
-```python
-from __future__ import print_function
-import time
-import kclient
-from kclient.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: Bearer
-configuration = kclient.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
-model = 'model_example' # str | Serving model
-body = kclient.ModelsArbitrary() # ModelsArbitrary | 
-workspace = 'workspace_example' # str | Workspace's name
-serving = 'serving_example' # str | Serving's Name or ID
-port = 'port_example' # str | Serving port
-
-try:
-    # TF proxy to serving (model)
-    api_response = api_instance.serving_tf_proxy_model(model, body, workspace, serving, port)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ServingApi->serving_tf_proxy_model: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **model** | **str**| Serving model | 
- **body** | [**ModelsArbitrary**](ModelsArbitrary.md)|  | 
- **workspace** | **str**| Workspace&#39;s name | 
- **serving** | **str**| Serving&#39;s Name or ID | 
- **port** | **str**| Serving port | 
-
-### Return type
-
-[**ModelsArbitrary**](ModelsArbitrary.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **serving_tf_proxy_model_signature**
-> ModelsArbitrary serving_tf_proxy_model_signature(model, signature, body, workspace, serving, port)
-
-TF proxy to serving (model, signature)
+Proxy to serving (json data)
 
 ### Example
 ```python
@@ -316,31 +254,25 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
-model = 'model_example' # str | Serving model
-signature = 'signature_example' # str | Serving signature
 body = kclient.ModelsArbitrary() # ModelsArbitrary | 
 workspace = 'workspace_example' # str | Workspace's name
 serving = 'serving_example' # str | Serving's Name or ID
-port = 'port_example' # str | Serving port
 
 try:
-    # TF proxy to serving (model, signature)
-    api_response = api_instance.serving_tf_proxy_model_signature(model, signature, body, workspace, serving, port)
+    # Proxy to serving (json data)
+    api_response = api_instance.serving_proxy(body, workspace, serving)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ServingApi->serving_tf_proxy_model_signature: %s\n" % e)
+    print("Exception when calling ServingApi->serving_proxy: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | **str**| Serving model | 
- **signature** | **str**| Serving signature | 
  **body** | [**ModelsArbitrary**](ModelsArbitrary.md)|  | 
  **workspace** | **str**| Workspace&#39;s name | 
  **serving** | **str**| Serving&#39;s Name or ID | 
- **port** | **str**| Serving port | 
 
 ### Return type
 
@@ -352,71 +284,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **serving_tf_proxy_model_signature_version**
-> ModelsArbitrary serving_tf_proxy_model_signature_version(model, signature, version, body, workspace, serving, port)
-
-TF proxy to serving (model, signature, version)
-
-### Example
-```python
-from __future__ import print_function
-import time
-import kclient
-from kclient.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: Bearer
-configuration = kclient.Configuration()
-configuration.api_key['Authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['Authorization'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
-model = 'model_example' # str | Serving model
-signature = 'signature_example' # str | Serving signature
-version = 'version_example' # str | Serving version
-body = kclient.ModelsArbitrary() # ModelsArbitrary | 
-workspace = 'workspace_example' # str | Workspace's name
-serving = 'serving_example' # str | Serving's Name or ID
-port = 'port_example' # str | Serving port
-
-try:
-    # TF proxy to serving (model, signature, version)
-    api_response = api_instance.serving_tf_proxy_model_signature_version(model, signature, version, body, workspace, serving, port)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ServingApi->serving_tf_proxy_model_signature_version: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **model** | **str**| Serving model | 
- **signature** | **str**| Serving signature | 
- **version** | **str**| Serving version | 
- **body** | [**ModelsArbitrary**](ModelsArbitrary.md)|  | 
- **workspace** | **str**| Workspace&#39;s name | 
- **serving** | **str**| Serving&#39;s Name or ID | 
- **port** | **str**| Serving port | 
-
-### Return type
-
-[**ModelsArbitrary**](ModelsArbitrary.md)
-
-### Authorization
-
-[Bearer](../README.md#Bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

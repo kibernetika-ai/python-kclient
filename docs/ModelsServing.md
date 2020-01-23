@@ -5,6 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **application_display_name** | **str** |  | [optional] 
 **application_name** | **str** |  | [optional] 
+**application_source** | **str** |  | [optional] 
+**application_source_sub_path** | **str** |  | [optional] 
 **build** | **str** |  | [optional] 
 **cluster_id** | **str** |  | [optional] 
 **config** | [**MlappUniversalServing**](MlappUniversalServing.md) |  | [optional] 

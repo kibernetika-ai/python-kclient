@@ -85,9 +85,7 @@ Class | Method | HTTP request | Description
 *ServingApi* | [**serving_disable**](docs/ServingApi.md#serving_disable) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/disable | Disable serving
 *ServingApi* | [**serving_enable**](docs/ServingApi.md#serving_enable) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/enable | Enable serving
 *ServingApi* | [**serving_info**](docs/ServingApi.md#serving_info) | **GET** /api/v0.2/workspace/{workspace}/serving/{serving} | Return serving&#39;s info
-*ServingApi* | [**serving_tf_proxy_model**](docs/ServingApi.md#serving_tf_proxy_model) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/tfproxy/{port}/{model} | TF proxy to serving (model)
-*ServingApi* | [**serving_tf_proxy_model_signature**](docs/ServingApi.md#serving_tf_proxy_model_signature) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/tfproxy/{port}/{model}/{signature} | TF proxy to serving (model, signature)
-*ServingApi* | [**serving_tf_proxy_model_signature_version**](docs/ServingApi.md#serving_tf_proxy_model_signature_version) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/tfproxy/{port}/{model}/{signature}/{version} | TF proxy to serving (model, signature, version)
+*ServingApi* | [**serving_proxy**](docs/ServingApi.md#serving_proxy) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/proxy | Proxy to serving (json data)
 *ServingApi* | [**update_serving**](docs/ServingApi.md#update_serving) | **PUT** /api/v0.2/workspace/{workspace}/serving/{serving} | Update serving
 
 

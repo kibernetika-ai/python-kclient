@@ -33,6 +33,8 @@ class ModelsServing(object):
     swagger_types = {
         'application_display_name': 'str',
         'application_name': 'str',
+        'application_source': 'str',
+        'application_source_sub_path': 'str',
         'build': 'str',
         'cluster_id': 'str',
         'config': 'MlappUniversalServing',
@@ -70,6 +72,8 @@ class ModelsServing(object):
     attribute_map = {
         'application_display_name': 'ApplicationDisplayName',
         'application_name': 'ApplicationName',
+        'application_source': 'ApplicationSource',
+        'application_source_sub_path': 'ApplicationSourceSubPath',
         'build': 'Build',
         'cluster_id': 'ClusterID',
         'config': 'Config',
@@ -104,11 +108,13 @@ class ModelsServing(object):
         'workspace_name': 'WorkspaceName'
     }
 
-    def __init__(self, application_display_name=None, application_name=None, build=None, cluster_id=None, config=None, containers_count=None, description=None, disabled=None, display_name=None, gpu_used=None, gallery=None, gallery_tags=None, health=None, health_error=None, id=None, inference_form=None, inference_name=None, inference_streams=None, inference_values=None, inference_version=None, inference_workspace_display_name=None, inference_workspace_name=None, inner_address=None, name=None, picture=None, status=None, status_message=None, task=None, type=None, user_display_name=None, user_id=None, user_login=None, workspace_display_name=None, workspace_name=None):  # noqa: E501
+    def __init__(self, application_display_name=None, application_name=None, application_source=None, application_source_sub_path=None, build=None, cluster_id=None, config=None, containers_count=None, description=None, disabled=None, display_name=None, gpu_used=None, gallery=None, gallery_tags=None, health=None, health_error=None, id=None, inference_form=None, inference_name=None, inference_streams=None, inference_values=None, inference_version=None, inference_workspace_display_name=None, inference_workspace_name=None, inner_address=None, name=None, picture=None, status=None, status_message=None, task=None, type=None, user_display_name=None, user_id=None, user_login=None, workspace_display_name=None, workspace_name=None):  # noqa: E501
         """ModelsServing - a model defined in Swagger"""  # noqa: E501
 
         self._application_display_name = None
         self._application_name = None
+        self._application_source = None
+        self._application_source_sub_path = None
         self._build = None
         self._cluster_id = None
         self._config = None
@@ -147,6 +153,10 @@ class ModelsServing(object):
             self.application_display_name = application_display_name
         if application_name is not None:
             self.application_name = application_name
+        if application_source is not None:
+            self.application_source = application_source
+        if application_source_sub_path is not None:
+            self.application_source_sub_path = application_source_sub_path
         if build is not None:
             self.build = build
         if cluster_id is not None:
@@ -253,6 +263,48 @@ class ModelsServing(object):
         """
 
         self._application_name = application_name
+
+    @property
+    def application_source(self):
+        """Gets the application_source of this ModelsServing.  # noqa: E501
+
+
+        :return: The application_source of this ModelsServing.  # noqa: E501
+        :rtype: str
+        """
+        return self._application_source
+
+    @application_source.setter
+    def application_source(self, application_source):
+        """Sets the application_source of this ModelsServing.
+
+
+        :param application_source: The application_source of this ModelsServing.  # noqa: E501
+        :type: str
+        """
+
+        self._application_source = application_source
+
+    @property
+    def application_source_sub_path(self):
+        """Gets the application_source_sub_path of this ModelsServing.  # noqa: E501
+
+
+        :return: The application_source_sub_path of this ModelsServing.  # noqa: E501
+        :rtype: str
+        """
+        return self._application_source_sub_path
+
+    @application_source_sub_path.setter
+    def application_source_sub_path(self, application_source_sub_path):
+        """Sets the application_source_sub_path of this ModelsServing.
+
+
+        :param application_source_sub_path: The application_source_sub_path of this ModelsServing.  # noqa: E501
+        :type: str
+        """
+
+        self._application_source_sub_path = application_source_sub_path
 
     @property
     def build(self):

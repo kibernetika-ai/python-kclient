@@ -449,51 +449,47 @@ class ServingApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def serving_tf_proxy_model(self, model, body, workspace, serving, port, **kwargs):  # noqa: E501
-        """TF proxy to serving (model)  # noqa: E501
+    def serving_proxy(self, body, workspace, serving, **kwargs):  # noqa: E501
+        """Proxy to serving (json data)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serving_tf_proxy_model(model, body, workspace, serving, port, async_req=True)
+        >>> thread = api.serving_proxy(body, workspace, serving, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str model: Serving model (required)
         :param ModelsArbitrary body: (required)
         :param str workspace: Workspace's name (required)
         :param str serving: Serving's Name or ID (required)
-        :param str port: Serving port (required)
         :return: ModelsArbitrary
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.serving_tf_proxy_model_with_http_info(model, body, workspace, serving, port, **kwargs)  # noqa: E501
+            return self.serving_proxy_with_http_info(body, workspace, serving, **kwargs)  # noqa: E501
         else:
-            (data) = self.serving_tf_proxy_model_with_http_info(model, body, workspace, serving, port, **kwargs)  # noqa: E501
+            (data) = self.serving_proxy_with_http_info(body, workspace, serving, **kwargs)  # noqa: E501
             return data
 
-    def serving_tf_proxy_model_with_http_info(self, model, body, workspace, serving, port, **kwargs):  # noqa: E501
-        """TF proxy to serving (model)  # noqa: E501
+    def serving_proxy_with_http_info(self, body, workspace, serving, **kwargs):  # noqa: E501
+        """Proxy to serving (json data)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serving_tf_proxy_model_with_http_info(model, body, workspace, serving, port, async_req=True)
+        >>> thread = api.serving_proxy_with_http_info(body, workspace, serving, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str model: Serving model (required)
         :param ModelsArbitrary body: (required)
         :param str workspace: Workspace's name (required)
         :param str serving: Serving's Name or ID (required)
-        :param str port: Serving port (required)
         :return: ModelsArbitrary
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['model', 'body', 'workspace', 'serving', 'port']  # noqa: E501
+        all_params = ['body', 'workspace', 'serving']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -504,42 +500,30 @@ class ServingApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method serving_tf_proxy_model" % key
+                    " to method serving_proxy" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'model' is set
-        if ('model' not in params or
-                params['model'] is None):
-            raise ValueError("Missing the required parameter `model` when calling `serving_tf_proxy_model`")  # noqa: E501
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `serving_tf_proxy_model`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `serving_proxy`")  # noqa: E501
         # verify the required parameter 'workspace' is set
         if ('workspace' not in params or
                 params['workspace'] is None):
-            raise ValueError("Missing the required parameter `workspace` when calling `serving_tf_proxy_model`")  # noqa: E501
+            raise ValueError("Missing the required parameter `workspace` when calling `serving_proxy`")  # noqa: E501
         # verify the required parameter 'serving' is set
         if ('serving' not in params or
                 params['serving'] is None):
-            raise ValueError("Missing the required parameter `serving` when calling `serving_tf_proxy_model`")  # noqa: E501
-        # verify the required parameter 'port' is set
-        if ('port' not in params or
-                params['port'] is None):
-            raise ValueError("Missing the required parameter `port` when calling `serving_tf_proxy_model`")  # noqa: E501
+            raise ValueError("Missing the required parameter `serving` when calling `serving_proxy`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'model' in params:
-            path_params['model'] = params['model']  # noqa: E501
         if 'workspace' in params:
             path_params['workspace'] = params['workspace']  # noqa: E501
         if 'serving' in params:
             path_params['serving'] = params['serving']  # noqa: E501
-        if 'port' in params:
-            path_params['port'] = params['port']  # noqa: E501
 
         query_params = []
 
@@ -555,297 +539,11 @@ class ServingApi(object):
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
 
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['Bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v0.2/workspace/{workspace}/serving/{serving}/tfproxy/{port}/{model}', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ModelsArbitrary',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def serving_tf_proxy_model_signature(self, model, signature, body, workspace, serving, port, **kwargs):  # noqa: E501
-        """TF proxy to serving (model, signature)  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serving_tf_proxy_model_signature(model, signature, body, workspace, serving, port, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str model: Serving model (required)
-        :param str signature: Serving signature (required)
-        :param ModelsArbitrary body: (required)
-        :param str workspace: Workspace's name (required)
-        :param str serving: Serving's Name or ID (required)
-        :param str port: Serving port (required)
-        :return: ModelsArbitrary
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.serving_tf_proxy_model_signature_with_http_info(model, signature, body, workspace, serving, port, **kwargs)  # noqa: E501
-        else:
-            (data) = self.serving_tf_proxy_model_signature_with_http_info(model, signature, body, workspace, serving, port, **kwargs)  # noqa: E501
-            return data
-
-    def serving_tf_proxy_model_signature_with_http_info(self, model, signature, body, workspace, serving, port, **kwargs):  # noqa: E501
-        """TF proxy to serving (model, signature)  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serving_tf_proxy_model_signature_with_http_info(model, signature, body, workspace, serving, port, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str model: Serving model (required)
-        :param str signature: Serving signature (required)
-        :param ModelsArbitrary body: (required)
-        :param str workspace: Workspace's name (required)
-        :param str serving: Serving's Name or ID (required)
-        :param str port: Serving port (required)
-        :return: ModelsArbitrary
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['model', 'signature', 'body', 'workspace', 'serving', 'port']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serving_tf_proxy_model_signature" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'model' is set
-        if ('model' not in params or
-                params['model'] is None):
-            raise ValueError("Missing the required parameter `model` when calling `serving_tf_proxy_model_signature`")  # noqa: E501
-        # verify the required parameter 'signature' is set
-        if ('signature' not in params or
-                params['signature'] is None):
-            raise ValueError("Missing the required parameter `signature` when calling `serving_tf_proxy_model_signature`")  # noqa: E501
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `serving_tf_proxy_model_signature`")  # noqa: E501
-        # verify the required parameter 'workspace' is set
-        if ('workspace' not in params or
-                params['workspace'] is None):
-            raise ValueError("Missing the required parameter `workspace` when calling `serving_tf_proxy_model_signature`")  # noqa: E501
-        # verify the required parameter 'serving' is set
-        if ('serving' not in params or
-                params['serving'] is None):
-            raise ValueError("Missing the required parameter `serving` when calling `serving_tf_proxy_model_signature`")  # noqa: E501
-        # verify the required parameter 'port' is set
-        if ('port' not in params or
-                params['port'] is None):
-            raise ValueError("Missing the required parameter `port` when calling `serving_tf_proxy_model_signature`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'model' in params:
-            path_params['model'] = params['model']  # noqa: E501
-        if 'signature' in params:
-            path_params['signature'] = params['signature']  # noqa: E501
-        if 'workspace' in params:
-            path_params['workspace'] = params['workspace']  # noqa: E501
-        if 'serving' in params:
-            path_params['serving'] = params['serving']  # noqa: E501
-        if 'port' in params:
-            path_params['port'] = params['port']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.2/workspace/{workspace}/serving/{serving}/tfproxy/{port}/{model}/{signature}', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ModelsArbitrary',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def serving_tf_proxy_model_signature_version(self, model, signature, version, body, workspace, serving, port, **kwargs):  # noqa: E501
-        """TF proxy to serving (model, signature, version)  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serving_tf_proxy_model_signature_version(model, signature, version, body, workspace, serving, port, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str model: Serving model (required)
-        :param str signature: Serving signature (required)
-        :param str version: Serving version (required)
-        :param ModelsArbitrary body: (required)
-        :param str workspace: Workspace's name (required)
-        :param str serving: Serving's Name or ID (required)
-        :param str port: Serving port (required)
-        :return: ModelsArbitrary
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.serving_tf_proxy_model_signature_version_with_http_info(model, signature, version, body, workspace, serving, port, **kwargs)  # noqa: E501
-        else:
-            (data) = self.serving_tf_proxy_model_signature_version_with_http_info(model, signature, version, body, workspace, serving, port, **kwargs)  # noqa: E501
-            return data
-
-    def serving_tf_proxy_model_signature_version_with_http_info(self, model, signature, version, body, workspace, serving, port, **kwargs):  # noqa: E501
-        """TF proxy to serving (model, signature, version)  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.serving_tf_proxy_model_signature_version_with_http_info(model, signature, version, body, workspace, serving, port, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str model: Serving model (required)
-        :param str signature: Serving signature (required)
-        :param str version: Serving version (required)
-        :param ModelsArbitrary body: (required)
-        :param str workspace: Workspace's name (required)
-        :param str serving: Serving's Name or ID (required)
-        :param str port: Serving port (required)
-        :return: ModelsArbitrary
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['model', 'signature', 'version', 'body', 'workspace', 'serving', 'port']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method serving_tf_proxy_model_signature_version" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'model' is set
-        if ('model' not in params or
-                params['model'] is None):
-            raise ValueError("Missing the required parameter `model` when calling `serving_tf_proxy_model_signature_version`")  # noqa: E501
-        # verify the required parameter 'signature' is set
-        if ('signature' not in params or
-                params['signature'] is None):
-            raise ValueError("Missing the required parameter `signature` when calling `serving_tf_proxy_model_signature_version`")  # noqa: E501
-        # verify the required parameter 'version' is set
-        if ('version' not in params or
-                params['version'] is None):
-            raise ValueError("Missing the required parameter `version` when calling `serving_tf_proxy_model_signature_version`")  # noqa: E501
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `serving_tf_proxy_model_signature_version`")  # noqa: E501
-        # verify the required parameter 'workspace' is set
-        if ('workspace' not in params or
-                params['workspace'] is None):
-            raise ValueError("Missing the required parameter `workspace` when calling `serving_tf_proxy_model_signature_version`")  # noqa: E501
-        # verify the required parameter 'serving' is set
-        if ('serving' not in params or
-                params['serving'] is None):
-            raise ValueError("Missing the required parameter `serving` when calling `serving_tf_proxy_model_signature_version`")  # noqa: E501
-        # verify the required parameter 'port' is set
-        if ('port' not in params or
-                params['port'] is None):
-            raise ValueError("Missing the required parameter `port` when calling `serving_tf_proxy_model_signature_version`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'model' in params:
-            path_params['model'] = params['model']  # noqa: E501
-        if 'signature' in params:
-            path_params['signature'] = params['signature']  # noqa: E501
-        if 'version' in params:
-            path_params['version'] = params['version']  # noqa: E501
-        if 'workspace' in params:
-            path_params['workspace'] = params['workspace']  # noqa: E501
-        if 'serving' in params:
-            path_params['serving'] = params['serving']  # noqa: E501
-        if 'port' in params:
-            path_params['port'] = params['port']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['Bearer']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.2/workspace/{workspace}/serving/{serving}/tfproxy/{port}/{model}/{signature}/{version}', 'POST',
+            '/api/v0.2/workspace/{workspace}/serving/{serving}/proxy', 'POST',
             path_params,
             query_params,
             header_params,

@@ -31,21 +31,52 @@ class MlappServingSpecOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'no_cache': 'bool'
+        'edge_host': 'str',
+        'no_cache': 'bool',
+        'save_stream_previews': 'bool'
     }
 
     attribute_map = {
-        'no_cache': 'noCache'
+        'edge_host': 'edgeHost',
+        'no_cache': 'noCache',
+        'save_stream_previews': 'saveStreamPreviews'
     }
 
-    def __init__(self, no_cache=None):  # noqa: E501
+    def __init__(self, edge_host=None, no_cache=None, save_stream_previews=None):  # noqa: E501
         """MlappServingSpecOptions - a model defined in Swagger"""  # noqa: E501
 
+        self._edge_host = None
         self._no_cache = None
+        self._save_stream_previews = None
         self.discriminator = None
 
+        if edge_host is not None:
+            self.edge_host = edge_host
         if no_cache is not None:
             self.no_cache = no_cache
+        if save_stream_previews is not None:
+            self.save_stream_previews = save_stream_previews
+
+    @property
+    def edge_host(self):
+        """Gets the edge_host of this MlappServingSpecOptions.  # noqa: E501
+
+
+        :return: The edge_host of this MlappServingSpecOptions.  # noqa: E501
+        :rtype: str
+        """
+        return self._edge_host
+
+    @edge_host.setter
+    def edge_host(self, edge_host):
+        """Sets the edge_host of this MlappServingSpecOptions.
+
+
+        :param edge_host: The edge_host of this MlappServingSpecOptions.  # noqa: E501
+        :type: str
+        """
+
+        self._edge_host = edge_host
 
     @property
     def no_cache(self):
@@ -67,6 +98,27 @@ class MlappServingSpecOptions(object):
         """
 
         self._no_cache = no_cache
+
+    @property
+    def save_stream_previews(self):
+        """Gets the save_stream_previews of this MlappServingSpecOptions.  # noqa: E501
+
+
+        :return: The save_stream_previews of this MlappServingSpecOptions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._save_stream_previews
+
+    @save_stream_previews.setter
+    def save_stream_previews(self, save_stream_previews):
+        """Sets the save_stream_previews of this MlappServingSpecOptions.
+
+
+        :param save_stream_previews: The save_stream_previews of this MlappServingSpecOptions.  # noqa: E501
+        :type: bool
+        """
+
+        self._save_stream_previews = save_stream_previews
 
     def to_dict(self):
         """Returns the model properties as a dict"""
