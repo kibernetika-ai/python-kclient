@@ -2,11 +2,11 @@ from examples import config
 import kclient
 from kclient.rest import ApiException
 from kclient.models import inference_run_serving_request
+from kclient.utils import client
 
 
-client = kclient.ApiClient(config.get())
-
-inference_api = kclient.api.inference_api.InferenceApi(client)
+cl = client.with_bearer_token(config.bearer_token())
+inference_api = kclient.api.inference_api.InferenceApi(cl)
 
 workspace_name, catalog_inference_name, version = "kuberlab-demo", "demo", "0.0.1"
 serving_workspace_name, serving_name = "expo-recall", "demo-0-0-1"

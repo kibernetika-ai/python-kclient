@@ -1,11 +1,10 @@
 from examples import config
 import kclient
 from kclient.rest import ApiException
+from kclient.utils import client
 
-
-client = kclient.ApiClient(config.get())
-
-serving_api = kclient.api.serving_api.ServingApi(client)
+cl = client.with_bearer_token(config.bearer_token())
+serving_api = kclient.api.serving_api.ServingApi(cl)
 
 serving_workspace_name, serving_name = 'expo-recall', 'demo-0-0-1'
 
