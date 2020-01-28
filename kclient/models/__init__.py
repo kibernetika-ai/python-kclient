@@ -15,6 +15,8 @@
 from __future__ import absolute_import
 
 # import models into model package
+from kclient.models.application_project_serving_job import ApplicationProjectServingJob
+from kclient.models.application_project_serving_job_output import ApplicationProjectServingJobOutput
 from kclient.models.dealerclient_resource_limit import DealerclientResourceLimit
 from kclient.models.inference_run_serving_request import InferenceRunServingRequest
 from kclient.models.mlapp_autoscale import MlappAutoscale

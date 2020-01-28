@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**serving_disable**](ServingApi.md#serving_disable) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/disable | Disable serving
 [**serving_enable**](ServingApi.md#serving_enable) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/enable | Enable serving
 [**serving_info**](ServingApi.md#serving_info) | **GET** /api/v0.2/workspace/{workspace}/serving/{serving} | Return serving&#39;s info
+[**serving_project_job**](ServingApi.md#serving_project_job) | **GET** /api/v0.2/workspace/{workspace}/serving/{serving}/projresult/job/{job} | Serving result jobs
 [**serving_proxy**](ServingApi.md#serving_proxy) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/proxy | Proxy to serving (json data)
 [**update_serving**](ServingApi.md#update_serving) | **PUT** /api/v0.2/workspace/{workspace}/serving/{serving} | Update serving
 
@@ -221,6 +222,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ModelsServing**](ModelsServing.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **serving_project_job**
+> ApplicationProjectServingJob serving_project_job(job, workspace, serving)
+
+Serving result jobs
+
+### Example
+```python
+from __future__ import print_function
+import time
+import kclient
+from kclient.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: Bearer
+configuration = kclient.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = kclient.ServingApi(kclient.ApiClient(configuration))
+job = 'job_example' # str | Serving job ID
+workspace = 'workspace_example' # str | Workspace's name
+serving = 'serving_example' # str | Serving's Name or ID
+
+try:
+    # Serving result jobs
+    api_response = api_instance.serving_project_job(job, workspace, serving)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ServingApi->serving_project_job: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **job** | **str**| Serving job ID | 
+ **workspace** | **str**| Workspace&#39;s name | 
+ **serving** | **str**| Serving&#39;s Name or ID | 
+
+### Return type
+
+[**ApplicationProjectServingJob**](ApplicationProjectServingJob.md)
 
 ### Authorization
 

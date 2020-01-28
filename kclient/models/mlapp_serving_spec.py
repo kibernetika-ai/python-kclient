@@ -38,6 +38,7 @@ class MlappServingSpec(object):
         'params': 'list[MlappServingSpecParam]',
         'raw_input': 'bool',
         'response': 'list[MlappServingResponseParam]',
+        'response_template': 'str',
         'signature': 'str',
         'template': 'str'
     }
@@ -50,11 +51,12 @@ class MlappServingSpec(object):
         'params': 'params',
         'raw_input': 'rawInput',
         'response': 'response',
+        'response_template': 'responseTemplate',
         'signature': 'signature',
         'template': 'template'
     }
 
-    def __init__(self, model=None, options=None, out_filter=None, out_mime_type=None, params=None, raw_input=None, response=None, signature=None, template=None):  # noqa: E501
+    def __init__(self, model=None, options=None, out_filter=None, out_mime_type=None, params=None, raw_input=None, response=None, response_template=None, signature=None, template=None):  # noqa: E501
         """MlappServingSpec - a model defined in Swagger"""  # noqa: E501
 
         self._model = None
@@ -64,6 +66,7 @@ class MlappServingSpec(object):
         self._params = None
         self._raw_input = None
         self._response = None
+        self._response_template = None
         self._signature = None
         self._template = None
         self.discriminator = None
@@ -82,6 +85,8 @@ class MlappServingSpec(object):
             self.raw_input = raw_input
         if response is not None:
             self.response = response
+        if response_template is not None:
+            self.response_template = response_template
         if signature is not None:
             self.signature = signature
         if template is not None:
@@ -233,6 +238,27 @@ class MlappServingSpec(object):
         """
 
         self._response = response
+
+    @property
+    def response_template(self):
+        """Gets the response_template of this MlappServingSpec.  # noqa: E501
+
+
+        :return: The response_template of this MlappServingSpec.  # noqa: E501
+        :rtype: str
+        """
+        return self._response_template
+
+    @response_template.setter
+    def response_template(self, response_template):
+        """Sets the response_template of this MlappServingSpec.
+
+
+        :param response_template: The response_template of this MlappServingSpec.  # noqa: E501
+        :type: str
+        """
+
+        self._response_template = response_template
 
     @property
     def signature(self):

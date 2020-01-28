@@ -23,6 +23,8 @@ from kclient.api.serving_api import ServingApi
 from kclient.api_client import ApiClient
 from kclient.configuration import Configuration
 # import models into sdk package
+from kclient.models.application_project_serving_job import ApplicationProjectServingJob
+from kclient.models.application_project_serving_job_output import ApplicationProjectServingJobOutput
 from kclient.models.dealerclient_resource_limit import DealerclientResourceLimit
 from kclient.models.inference_run_serving_request import InferenceRunServingRequest
 from kclient.models.mlapp_autoscale import MlappAutoscale

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **params** | [**list[MlappServingSpecParam]**](MlappServingSpecParam.md) |  | [optional] 
 **raw_input** | **bool** |  | [optional] 
 **response** | [**list[MlappServingResponseParam]**](MlappServingResponseParam.md) |  | [optional] 
+**response_template** | **str** |  | [optional] 
 **signature** | **str** |  | [optional] 
 **template** | **str** |  | [optional] 
 

@@ -85,12 +85,15 @@ Class | Method | HTTP request | Description
 *ServingApi* | [**serving_disable**](docs/ServingApi.md#serving_disable) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/disable | Disable serving
 *ServingApi* | [**serving_enable**](docs/ServingApi.md#serving_enable) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/enable | Enable serving
 *ServingApi* | [**serving_info**](docs/ServingApi.md#serving_info) | **GET** /api/v0.2/workspace/{workspace}/serving/{serving} | Return serving&#39;s info
+*ServingApi* | [**serving_project_job**](docs/ServingApi.md#serving_project_job) | **GET** /api/v0.2/workspace/{workspace}/serving/{serving}/projresult/job/{job} | Serving result jobs
 *ServingApi* | [**serving_proxy**](docs/ServingApi.md#serving_proxy) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/proxy | Proxy to serving (json data)
 *ServingApi* | [**update_serving**](docs/ServingApi.md#update_serving) | **PUT** /api/v0.2/workspace/{workspace}/serving/{serving} | Update serving
 
 
 ## Documentation For Models
 
+ - [ApplicationProjectServingJob](docs/ApplicationProjectServingJob.md)
+ - [ApplicationProjectServingJobOutput](docs/ApplicationProjectServingJobOutput.md)
  - [DealerclientResourceLimit](docs/DealerclientResourceLimit.md)
  - [InferenceRunServingRequest](docs/InferenceRunServingRequest.md)
  - [MlappAutoscale](docs/MlappAutoscale.md)
