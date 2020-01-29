@@ -31,25 +31,51 @@ class ApplicationProjectServingJobOutput(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'file': 'str',
         'label': 'str',
         'link': 'str'
     }
 
     attribute_map = {
+        'file': 'File',
         'label': 'Label',
         'link': 'Link'
     }
 
-    def __init__(self, label=None, link=None):  # noqa: E501
+    def __init__(self, file=None, label=None, link=None):  # noqa: E501
         """ApplicationProjectServingJobOutput - a model defined in Swagger"""  # noqa: E501
 
+        self._file = None
         self._label = None
         self._link = None
         self.discriminator = None
 
+        if file is not None:
+            self.file = file
         if label is not None:
             self.label = label
         self.link = link
+
+    @property
+    def file(self):
+        """Gets the file of this ApplicationProjectServingJobOutput.  # noqa: E501
+
+
+        :return: The file of this ApplicationProjectServingJobOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._file
+
+    @file.setter
+    def file(self, file):
+        """Sets the file of this ApplicationProjectServingJobOutput.
+
+
+        :param file: The file of this ApplicationProjectServingJobOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._file = file
 
     @property
     def label(self):
