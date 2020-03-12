@@ -17,12 +17,14 @@ from __future__ import absolute_import
 
 # import apis into sdk package
 from kclient.api.inference_api import InferenceApi
+from kclient.api.ml_model_api import MLModelApi
 from kclient.api.serving_api import ServingApi
 
 # import ApiClient
 from kclient.api_client import ApiClient
 from kclient.configuration import Configuration
 # import models into sdk package
+from kclient.models.application_application_model_version import ApplicationApplicationModelVersion
 from kclient.models.application_project_serving_job import ApplicationProjectServingJob
 from kclient.models.application_project_serving_job_output import ApplicationProjectServingJobOutput
 from kclient.models.dealerclient_resource_limit import DealerclientResourceLimit
@@ -48,12 +50,20 @@ from kclient.models.mlapp_serving_spec_param_value import MlappServingSpecParamV
 from kclient.models.mlapp_universal_serving import MlappUniversalServing
 from kclient.models.mlapp_volume import MlappVolume
 from kclient.models.mlapp_volume_mount import MlappVolumeMount
+from kclient.models.models_application_model import ModelsApplicationModel
+from kclient.models.models_application_model_config import ModelsApplicationModelConfig
+from kclient.models.models_application_model_config_serving import ModelsApplicationModelConfigServing
+from kclient.models.models_application_model_source import ModelsApplicationModelSource
+from kclient.models.models_application_model_version_stored_data import ModelsApplicationModelVersionStoredData
 from kclient.models.models_arbitrary import ModelsArbitrary
+from kclient.models.models_catalog_item_obj import ModelsCatalogItemObj
+from kclient.models.models_forked_item import ModelsForkedItem
 from kclient.models.models_inference_version import ModelsInferenceVersion
 from kclient.models.models_serving import ModelsServing
 from kclient.models.models_task_form_element import ModelsTaskFormElement
 from kclient.models.models_task_form_element_stream_extended import ModelsTaskFormElementStreamExtended
 from kclient.models.models_task_form_element_value import ModelsTaskFormElementValue
+from kclient.models.models_user import ModelsUser
 from kclient.models.v1_empty_dir_volume_source import V1EmptyDirVolumeSource
 from kclient.models.v1_flex_volume_source import V1FlexVolumeSource
 from kclient.models.v1_host_path_type import V1HostPathType

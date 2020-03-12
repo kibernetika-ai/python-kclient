@@ -31,31 +31,57 @@ class MlappServingSpecOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'audience_host': 'str',
         'edge_host': 'str',
         'no_cache': 'bool',
         'save_stream_previews': 'bool'
     }
 
     attribute_map = {
+        'audience_host': 'audienceHost',
         'edge_host': 'edgeHost',
         'no_cache': 'noCache',
         'save_stream_previews': 'saveStreamPreviews'
     }
 
-    def __init__(self, edge_host=None, no_cache=None, save_stream_previews=None):  # noqa: E501
+    def __init__(self, audience_host=None, edge_host=None, no_cache=None, save_stream_previews=None):  # noqa: E501
         """MlappServingSpecOptions - a model defined in Swagger"""  # noqa: E501
 
+        self._audience_host = None
         self._edge_host = None
         self._no_cache = None
         self._save_stream_previews = None
         self.discriminator = None
 
+        if audience_host is not None:
+            self.audience_host = audience_host
         if edge_host is not None:
             self.edge_host = edge_host
         if no_cache is not None:
             self.no_cache = no_cache
         if save_stream_previews is not None:
             self.save_stream_previews = save_stream_previews
+
+    @property
+    def audience_host(self):
+        """Gets the audience_host of this MlappServingSpecOptions.  # noqa: E501
+
+
+        :return: The audience_host of this MlappServingSpecOptions.  # noqa: E501
+        :rtype: str
+        """
+        return self._audience_host
+
+    @audience_host.setter
+    def audience_host(self, audience_host):
+        """Sets the audience_host of this MlappServingSpecOptions.
+
+
+        :param audience_host: The audience_host of this MlappServingSpecOptions.  # noqa: E501
+        :type: str
+        """
+
+        self._audience_host = audience_host
 
     @property
     def edge_host(self):

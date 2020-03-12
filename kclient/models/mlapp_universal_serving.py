@@ -39,6 +39,7 @@ class MlappUniversalServing(object):
         'default_mount_path': 'str',
         'default_volume_mapping': 'bool',
         'disabled': 'bool',
+        'disabled_reason': 'str',
         'display_name': 'str',
         'env': 'list[MlappEnv]',
         'front_api': 'str',
@@ -71,6 +72,7 @@ class MlappUniversalServing(object):
         'default_mount_path': 'default_mount_path',
         'default_volume_mapping': 'default_volume_mapping',
         'disabled': 'disabled',
+        'disabled_reason': 'disabledReason',
         'display_name': 'displayName',
         'env': 'env',
         'front_api': 'front_api',
@@ -94,7 +96,7 @@ class MlappUniversalServing(object):
         'workspace_id': 'workspace_id'
     }
 
-    def __init__(self, args=None, autoscale=None, build=None, build_info=None, command=None, default_mount_path=None, default_volume_mapping=None, disabled=None, display_name=None, env=None, front_api=None, images=None, labels=None, model=None, model_id=None, name=None, nodes=None, ports=None, replicas=None, resources=None, skip_prefix=None, sources=None, spec=None, task_name=None, type=None, volumes=None, work_dir=None, workspace=None, workspace_id=None):  # noqa: E501
+    def __init__(self, args=None, autoscale=None, build=None, build_info=None, command=None, default_mount_path=None, default_volume_mapping=None, disabled=None, disabled_reason=None, display_name=None, env=None, front_api=None, images=None, labels=None, model=None, model_id=None, name=None, nodes=None, ports=None, replicas=None, resources=None, skip_prefix=None, sources=None, spec=None, task_name=None, type=None, volumes=None, work_dir=None, workspace=None, workspace_id=None):  # noqa: E501
         """MlappUniversalServing - a model defined in Swagger"""  # noqa: E501
 
         self._args = None
@@ -105,6 +107,7 @@ class MlappUniversalServing(object):
         self._default_mount_path = None
         self._default_volume_mapping = None
         self._disabled = None
+        self._disabled_reason = None
         self._display_name = None
         self._env = None
         self._front_api = None
@@ -143,6 +146,8 @@ class MlappUniversalServing(object):
         if default_volume_mapping is not None:
             self.default_volume_mapping = default_volume_mapping
         self.disabled = disabled
+        if disabled_reason is not None:
+            self.disabled_reason = disabled_reason
         if display_name is not None:
             self.display_name = display_name
         if env is not None:
@@ -354,6 +359,27 @@ class MlappUniversalServing(object):
             raise ValueError("Invalid value for `disabled`, must not be `None`")  # noqa: E501
 
         self._disabled = disabled
+
+    @property
+    def disabled_reason(self):
+        """Gets the disabled_reason of this MlappUniversalServing.  # noqa: E501
+
+
+        :return: The disabled_reason of this MlappUniversalServing.  # noqa: E501
+        :rtype: str
+        """
+        return self._disabled_reason
+
+    @disabled_reason.setter
+    def disabled_reason(self, disabled_reason):
+        """Sets the disabled_reason of this MlappUniversalServing.
+
+
+        :param disabled_reason: The disabled_reason of this MlappUniversalServing.  # noqa: E501
+        :type: str
+        """
+
+        self._disabled_reason = disabled_reason
 
     @property
     def display_name(self):

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **default_mount_path** | **str** |  | [optional] 
 **default_volume_mapping** | **bool** |  | [optional] 
 **disabled** | **bool** |  | 
+**disabled_reason** | **str** |  | [optional] 
 **display_name** | **str** |  | [optional] 
 **env** | [**list[MlappEnv]**](MlappEnv.md) |  | [optional] 
 **front_api** | **str** |  | [optional] 

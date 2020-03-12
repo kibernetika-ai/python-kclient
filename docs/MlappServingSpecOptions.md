@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**audience_host** | **str** |  | [optional] 
 **edge_host** | **str** |  | [optional] 
 **no_cache** | **bool** |  | [optional] 
 **save_stream_previews** | **bool** |  | [optional] 

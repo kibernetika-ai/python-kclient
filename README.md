@@ -81,6 +81,16 @@ Class | Method | HTTP request | Description
 *InferenceApi* | [**inference_inference_version_info**](docs/InferenceApi.md#inference_inference_version_info) | **GET** /api/v0.2/workspace/{workspace}/inference/{inference}/versions/{version} | Return inference&#39;s info for specified version
 *InferenceApi* | [**inference_inference_version_start**](docs/InferenceApi.md#inference_inference_version_start) | **POST** /api/v0.2/workspace/{workspace}/inference/{inference}/versions/{version}/start | Starts serving
 *InferenceApi* | [**inference_inference_version_update**](docs/InferenceApi.md#inference_inference_version_update) | **PUT** /api/v0.2/workspace/{workspace}/inference/{inference}/versions/{version} | Update inference&#39;s info for specified version
+*MLModelApi* | [**ml_model_create_version**](docs/MLModelApi.md#ml_model_create_version) | **POST** /api/v0.2/workspace/{workspace}/mlmodel/{mlmodel}/versions | ML Model: create version
+*MLModelApi* | [**ml_model_version_file_delete**](docs/MLModelApi.md#ml_model_version_file_delete) | **DELETE** /api/v0.2/workspace/{workspace}/mlmodel/{mlmodel}/versions/{version} | ML Model version delete with files
+*MLModelApi* | [**ml_model_version_info**](docs/MLModelApi.md#ml_model_version_info) | **GET** /api/v0.2/workspace/{workspace}/mlmodel/{mlmodel}/versions/{version} | ML Model version info
+*MLModelApi* | [**ml_model_version_update**](docs/MLModelApi.md#ml_model_version_update) | **PUT** /api/v0.2/workspace/{workspace}/mlmodel/{mlmodel}/versions/{version} | Update ml model version&#39;s config
+*MLModelApi* | [**ml_model_versions**](docs/MLModelApi.md#ml_model_versions) | **GET** /api/v0.2/workspace/{workspace}/mlmodel/{mlmodel}/versions | ML Model: versions list
+*MLModelApi* | [**mlmodel_add**](docs/MLModelApi.md#mlmodel_add) | **POST** /api/v0.2/workspace/{workspace}/mlmodel | Create ML Model
+*MLModelApi* | [**mlmodel_info**](docs/MLModelApi.md#mlmodel_info) | **GET** /api/v0.2/workspace/{workspace}/mlmodel/{mlmodel} | Return ML Model&#39;s info
+*MLModelApi* | [**mlmodel_registry_delete**](docs/MLModelApi.md#mlmodel_registry_delete) | **DELETE** /api/v0.2/workspace/{workspace}/mlmodel/{mlmodel} | Delete ML Model
+*MLModelApi* | [**mlmodel_update**](docs/MLModelApi.md#mlmodel_update) | **PUT** /api/v0.2/workspace/{workspace}/mlmodel/{mlmodel} | Update ML Model
+*MLModelApi* | [**mlmodel_workspace_list**](docs/MLModelApi.md#mlmodel_workspace_list) | **GET** /api/v0.2/workspace/{workspace}/mlmodel | Return list of ML Model
 *ServingApi* | [**serving_delete**](docs/ServingApi.md#serving_delete) | **DELETE** /api/v0.2/workspace/{workspace}/serving/{serving} | Delete serving
 *ServingApi* | [**serving_disable**](docs/ServingApi.md#serving_disable) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/disable | Disable serving
 *ServingApi* | [**serving_enable**](docs/ServingApi.md#serving_enable) | **POST** /api/v0.2/workspace/{workspace}/serving/{serving}/enable | Enable serving
@@ -92,6 +102,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [ApplicationApplicationModelVersion](docs/ApplicationApplicationModelVersion.md)
  - [ApplicationProjectServingJob](docs/ApplicationProjectServingJob.md)
  - [ApplicationProjectServingJobOutput](docs/ApplicationProjectServingJobOutput.md)
  - [DealerclientResourceLimit](docs/DealerclientResourceLimit.md)
@@ -117,12 +128,20 @@ Class | Method | HTTP request | Description
  - [MlappUniversalServing](docs/MlappUniversalServing.md)
  - [MlappVolume](docs/MlappVolume.md)
  - [MlappVolumeMount](docs/MlappVolumeMount.md)
+ - [ModelsApplicationModel](docs/ModelsApplicationModel.md)
+ - [ModelsApplicationModelConfig](docs/ModelsApplicationModelConfig.md)
+ - [ModelsApplicationModelConfigServing](docs/ModelsApplicationModelConfigServing.md)
+ - [ModelsApplicationModelSource](docs/ModelsApplicationModelSource.md)
+ - [ModelsApplicationModelVersionStoredData](docs/ModelsApplicationModelVersionStoredData.md)
  - [ModelsArbitrary](docs/ModelsArbitrary.md)
+ - [ModelsCatalogItemObj](docs/ModelsCatalogItemObj.md)
+ - [ModelsForkedItem](docs/ModelsForkedItem.md)
  - [ModelsInferenceVersion](docs/ModelsInferenceVersion.md)
  - [ModelsServing](docs/ModelsServing.md)
  - [ModelsTaskFormElement](docs/ModelsTaskFormElement.md)
  - [ModelsTaskFormElementStreamExtended](docs/ModelsTaskFormElementStreamExtended.md)
  - [ModelsTaskFormElementValue](docs/ModelsTaskFormElementValue.md)
+ - [ModelsUser](docs/ModelsUser.md)
  - [V1EmptyDirVolumeSource](docs/V1EmptyDirVolumeSource.md)
  - [V1FlexVolumeSource](docs/V1FlexVolumeSource.md)
  - [V1HostPathType](docs/V1HostPathType.md)
